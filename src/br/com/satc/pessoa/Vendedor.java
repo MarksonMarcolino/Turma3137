@@ -61,7 +61,7 @@ public class Vendedor extends Funcionario{
     @Override
     public float calcularComissao(float valor, float porcentagem) {
     float calculo;
-    calculo = valor*porcentagem;
+    calculo = (valor/100)*porcentagem;
     return calculo;
     }
 
