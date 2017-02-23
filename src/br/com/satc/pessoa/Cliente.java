@@ -10,19 +10,44 @@ package br.com.satc.pessoa;
  * @author Markson
  */
 public class Cliente extends Pessoa {
+    double renda;
+    String logradouro;
+
+    public double getRenda() {
+        return renda;
+    }
+
+    public void setRenda(double renda) {
+        this.renda = renda;
+    }
+
+    public String getLogradouro() {
+        return logradouro;
+    }
+
+    public void setLogradouro(String logradouro) {
+        this.logradouro = logradouro;
+    }
 
     public Cliente(String nome, String rg, String cpf) {
         super(nome, rg, cpf);
-    }
+        this.setRenda(renda);
+        this.setLogradouro(logradouro);
+        }
 
     @Override
     public String retornaDados() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String dados = "Nome: "+this.getNome()
+               +"\nRG: "+this.getRg()
+                +"\nCPF: "+this.getCpf()
+                 +"\nLogradouro: "+this.getLogradouro()
+                  +"\nRenda: "+this.getRenda();
+        return dados;
     }
 
     @Override
-    public void AlteraNome(String novoNome) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void AlteraNome(String Nome) {
+        this.setNome(Nome);
     }
     
     private String logradouro;
