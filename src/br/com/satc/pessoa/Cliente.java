@@ -21,7 +21,7 @@ public class Cliente extends Pessoa {
     }
 
     @Override
-    public void AlteraNome() {
+    public void AlteraNome(String novoNome) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
