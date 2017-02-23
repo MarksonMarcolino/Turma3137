@@ -25,6 +25,8 @@ public class Executavel {
         
         p1.setSalarioFinal(p1.getSalario()+p1.getComissao());
         
+        p1.trocarSupervisor(p1);
+        
         System.out.println(p1.retornaDados());
         
         

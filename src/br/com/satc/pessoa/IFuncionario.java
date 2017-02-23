@@ -13,5 +13,6 @@ public interface IFuncionario {
     
     public float calcularComissao(float valor, float porcentagem);
     public void adicionarBonus(float bonus);
+    public void trocarSupervisor(Funcionario supervisor);
     
 }

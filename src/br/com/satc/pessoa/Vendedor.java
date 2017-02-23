@@ -49,7 +49,7 @@ public class Vendedor extends Funcionario{
     @Override
     public String retornaDados() {
                 String ata;
-        ata = "Nome : "+this.getNome()+"\nCPF : "+this.getCpf()+"\nRG : "+this.getRg()+"\nSetor : "+this.getSetor()+"\nCargo : "+this.getCargo()+"\nSalário : "+this.getSalario()+"\nComissão : "+this.getComissao()+"\nSalário final :"+this.getSalarioFinal();
+        ata = "Nome : "+this.getNome()+"\nCPF : "+this.getCpf()+"\nRG : "+this.getRg()+"\nSetor : "+this.getSetor()+"\nCargo : "+this.getCargo()+"\nSalário : "+this.getSalario()+"\nComissão : "+this.getComissao()+"\nSalário final :"+this.getSalarioFinal()+"\nSupervisor : "+this.getSupervisor().getNome();
         return ata;
     }
 
@@ -69,5 +69,12 @@ public class Vendedor extends Funcionario{
     public void adicionarBonus(float bonus) {
         this.setSalarioFinal(this.getSalarioFinal()+bonus);       
     }
+
+    @Override
+    public void trocarSupervisor(Funcionario supervisor) {
+       this.setSupervisor(supervisor);
+    }
+
+
     
 }
