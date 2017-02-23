@@ -14,16 +14,6 @@ public class Cliente extends Pessoa {
     public Cliente(String nome, String rg, String cpf) {
         super(nome, rg, cpf);
     }
-
-    @Override
-    public String retornaDados() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public void AlteraNome(String novoNome) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
     
     private String logradouro;
     private float renda;
