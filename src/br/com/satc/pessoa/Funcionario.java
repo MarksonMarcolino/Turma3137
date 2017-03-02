@@ -2,17 +2,23 @@
 package br.com.satc.pessoa;
 
 
-public abstract class Funcionario {
+public abstract class Funcionario extends Pessoa implements Ifuncionario{
     private String cargo, supervisor, setor;
-    private float salario, salariof;
-    
-    Funcionario(String cargo, String supervisor, String setor, float salario, float salariof){
+    private float salario, salariof,comissao;
+
+    public Funcionario(String nome, String rg, String cpf, String cargo, String supervisor, String setor, float salario, float salariof, float comissao){
+        super(nome, rg, cpf);
         this.setCargo(cargo);
         this.setSalario(salario);
         this.setSalariof(salariof);
         this.setSetor(setor);
         this.setSupervisor(supervisor);
+        this.setComissao(comissao);
+        
+        
     }
+    
+    
     
     public float CalcularComissao(float valor, float porcentagem){
         float comissao;
@@ -71,6 +77,14 @@ public abstract class Funcionario {
 
     public void setSalariof(float salariof) {
         this.salariof = salariof;
+    }
+
+    public float getComissao() {
+        return comissao;
+    }
+
+    public void setComissao(float comissao) {
+        this.comissao = comissao;
     }
    
 }
