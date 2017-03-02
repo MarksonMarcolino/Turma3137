@@ -63,13 +63,11 @@ public abstract class Funcionário extends Pessoa implements iFuncionário{
         this.salariofinal = salariofinal;
     }
     
-    public Funcionário(String nome, String rg, String cpf, String setor, String cargo, Funcionário supervisor, Float salario, Float comissao, Float salariofinal) {
+    public Funcionário(String nome, String rg, String cpf, String setor, String cargo, Float salario) {
         super(nome, rg, cpf);
         this.setSetor(setor);
         this.setCargo(cargo);
-        this.setSupervisor(supervisor);
         this.setSalario(salario);
-        this.setComissao(comissao);
         this.salariofinal=salario+this.comissao;
         }
     
