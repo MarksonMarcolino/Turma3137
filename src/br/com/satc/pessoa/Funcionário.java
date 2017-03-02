@@ -12,7 +12,7 @@ package br.com.satc.pessoa;
 public abstract class Funcionário extends Pessoa implements IFuncionário{
     private String setor,cargo;
     private float salario, comissao, salariofinal;
-    private Funcionário supervisor;
+    Funcionário supervisor;
 
     public String getSetor() {
         return setor;
