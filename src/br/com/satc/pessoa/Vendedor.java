@@ -10,14 +10,24 @@ package br.com.satc.pessoa;
  * @author Edutec
  */
 public class Vendedor extends Funcionario{
+        String especialidade;
 
-    public Vendedor(String setor, String cargo, float salario, float salariofinal, String nome, String rg, String cpf) {
+    public Vendedor(String especialidade, String setor, String cargo, float salario, float salariofinal, String nome, String rg, String cpf) {
         super(setor, cargo, salario, salariofinal, nome, rg, cpf);
+        this.especialidade=especialidade;
+    }
+
+    public String getEspecialidade() {
+        return especialidade;
+    }
+
+    public void setEspecialidade(String especialidade) {
+        this.especialidade = especialidade;
     }
 
     @Override
     public String retornaDados() {
-        throw new UnsupportedOperationException("Nome:"+this.getNome()+"\nRG:"+this.getRg()+"\nCPF:"+this.getCpf()+"\nSalario:"+this.getSalario()+"\nSetor:"+this.getSetor()+"\nCargo:"+this.getCargo()+"\nSalario Final:"+this.getSalariofinal()+"\nComissao:"+this.getComissao()+"\nSupervisor:"+this.getSupervisor().getNome());
+        throw new UnsupportedOperationException("Nome:"+this.getNome()+"\nEspecialidade:"+this.getEspecialidade()+"\nRG:"+this.getRg()+"\nCPF:"+this.getCpf()+"\nSalario:"+this.getSalario()+"\nSetor:"+this.getSetor()+"\nCargo:"+this.getCargo()+"\nSalario Final:"+this.getSalariofinal()+"\nComissao:"+this.getComissao()+"\nSupervisor:"+this.getSupervisor().getNome());
     }
 
     @Override
