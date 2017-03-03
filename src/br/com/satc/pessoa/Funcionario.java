@@ -21,6 +21,16 @@ public abstract class Funcionario extends Pessoa implements IFuncionario {
         this.cargo = cargo;
         this.salario = Salario;
     }
+
+    public Funcionario getSupervisor() {
+        return supervisor;
+    }
+
+    public void setSupervisor(Funcionario supervisor) {
+        this.supervisor = supervisor;
+    }
+    
+    
    
     public String getSetor() {
         return setor;

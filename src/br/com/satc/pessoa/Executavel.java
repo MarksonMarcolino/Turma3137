@@ -17,15 +17,13 @@ public class Executavel {
     public static void main(String[] args) {
    
         
-        Vendedor p1 = new Vendedor("Felipe","125125","125215","Compras","Estagiário",1780);
+        Vendedor p1 = new Vendedor("Felipe","125125","125215","Compras","Estagiário",1780,"Vendas");
         
         p1.setComissao(p1.getComissao() + p1.calcularComissao(500, 10));
         
         p1.adicionarBonus(501);
         
         p1.setSalarioFinal(p1.getSalario()+p1.getComissao());
-        
-        p1.trocarSupervisor(p1);
         
         System.out.println(p1.retornaDados());
         
