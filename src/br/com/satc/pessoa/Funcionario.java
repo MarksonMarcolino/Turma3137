@@ -1,45 +1,37 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package br.com.satc.pessoa;
 
 /**
  *
- * @author Soratto
+ * @author Edutec
  */
 public abstract class Funcionario extends Pessoa implements IFuncionario {
     
-    String setor;
-    String cargo;
-    float salario;
-    float comissao;
-    float salariofinal;
-    Funcionario supervisor;
-    
-    public Funcionario(String nome, String rg, String cpf, String setor, String cargo, float salario, Funcionario supervisor) {
-        super(nome,rg,cpf);
+    private String setor,cargo;
+    private float comissao,salario,salariofinal;
+    private Funcionario supervisor;
+
+    public Funcionario(String nome, String rg, String cpf, String setor, String cargo, float Salario) {
+        super(nome, rg, cpf);
         this.setor = setor;
         this.cargo = cargo;
-        this.salario = salario;
-        this.salariofinal = salario;
+        this.salario = Salario;
     }
 
-    @Override
-    public float calculaComissao(float salario, float porcent) {
-        float comissao;
-        comissao = salario*(porcent/100);
-        setComissao(this.comissao + comissao);
-        this.setSalariofinal(this.salariofinal + comissao);
-        return comissao;        
-    }
-    
-    @Override
-    public void trocaSupervisor(Funcionario supervisor){
-        this.supervisor = supervisor;        
+    public Funcionario getSupervisor() {
+        return supervisor;
     }
 
-    @Override
-    public void adicionaBonus(float bonus) {
-        setSalariofinal(this.salariofinal + bonus);
+    public void setSupervisor(Funcionario supervisor) {
+        this.supervisor = supervisor;
     }
     
+    
+   
     public String getSetor() {
         return setor;
     }
@@ -56,20 +48,20 @@ public abstract class Funcionario extends Pessoa implements IFuncionario {
         this.cargo = cargo;
     }
 
-    public float getSalario() {
-        return salario;
-    }
-
-    public void setSalario(float salario) {
-        this.salario = salario;
-    }
-
     public float getComissao() {
         return comissao;
     }
 
     public void setComissao(float comissao) {
         this.comissao = comissao;
+    }
+
+    public float getSalario() {
+        return salario;
+    }
+
+    public void setSalario(float salario) {
+        this.salario = salario;
     }
 
     public float getSalariofinal() {
@@ -79,16 +71,9 @@ public abstract class Funcionario extends Pessoa implements IFuncionario {
     public void setSalariofinal(float salariofinal) {
         this.salariofinal = salariofinal;
     }
-
-    public Funcionario getSupervisor() {
-        return supervisor;
-    }
-
-    public void setSupervisor(Funcionario supervisor) {
-        this.supervisor = supervisor;
-    }
-
-
+    
+    
+    
     
     
 }
