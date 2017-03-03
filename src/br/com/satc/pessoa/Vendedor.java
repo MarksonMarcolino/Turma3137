@@ -10,11 +10,21 @@ package br.com.satc.pessoa;
  * @author Edutec
  */
 public class Vendedor extends Funcionario {
+String especialidade;
 
-    public Vendedor( String setor, String cargo, double salario, String nome, String rg, String cpf) {
+    public Vendedor(String especialidade, String setor, String cargo, double salario, String nome, String rg, String cpf) {
         super(setor, cargo, salario, nome, rg, cpf);
-       
+        this.especialidade = especialidade;
     }
+
+    public String getEspecialidade() {
+        return especialidade;
+    }
+
+    public void setEspecialidade(String especialidade) {
+        this.especialidade = especialidade;
+    }
+
 
   
 
