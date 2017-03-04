@@ -13,7 +13,7 @@ public abstract class Funcionario extends Pessoa implements IFuncionario {
     float salariofinal;
     Funcionario supervisor;
     
-    public Funcionario(String nome, String rg, String cpf, String setor, String cargo, float salario, Funcionario supervisor) {
+    public Funcionario(String nome, String rg, String cpf, String setor, String cargo, float salario) {
         super(nome,rg,cpf);
         this.setor = setor;
         this.cargo = cargo;
