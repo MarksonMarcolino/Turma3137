@@ -11,14 +11,15 @@ package br.com.satc.pessoa;
  */
 public abstract class Funcionario extends Pessoa implements IFuncionario {
    
-    private float comissao, salario, salariof ;
-    private String cargo,setor,supervisor;
+    float comissao, salario, salariof ;
+    String cargo,setor;
+    Funcionario supervisor;
 
-    public String getSupervisor() {
+    public Funcionario getSupervisor() {
         return supervisor;
     }
 
-    public void setSupervisor(String supervisor) {
+    public void setSupervisor(Funcionario supervisor) {
         this.supervisor = supervisor;
     }
 
@@ -47,7 +48,7 @@ public abstract class Funcionario extends Pessoa implements IFuncionario {
         
     }
     
-    public void Supervisor(Funcionario superv){
+    public void Supervisor(Funcionario supervisor){
        this.setSupervisor(supervisor);
     }
             
