@@ -5,6 +5,7 @@
  */
 package br.com.satc.grafico;
 
+import br.com.satc.pessoa.Vendedor;
 import br.com.satc.singleton.BancoVendedor;
 import javax.swing.JOptionPane;
 
@@ -177,7 +178,7 @@ public class CadastroVend extends javax.swing.JInternalFrame {
         Especialidade = TEspecialidade.getText();
         Salario = Float.parseFloat(TSalario.getText());
         try{
-            BancoVendedor.getInstance().aniamis.add(new VENDEDOR(Nome, CPF, RG, Setor, Cargo, Especialidade, Salario));
+            BancoVendedor.getInstance().vendedores.add(new Vendedor(Especialidade, Setor, Cargo, Salario, Nome, RG, CPF));
             JOptionPane.showMessageDialog(this, "Êxito no Cadastro.");
             TNome.setText("");
             TCPF.setText("");

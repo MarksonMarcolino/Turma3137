@@ -16,7 +16,7 @@ public class Principal {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        Vendedor  v1 = new Vendedor("Consultor","Corporativo", "Profissional", 3000, 3150, "Nicolas", "1243141241", "2143141312");
+        Vendedor  v1 = new Vendedor("Consultor","Corporativo", "Profissional", 3000, "Nicolas", "1243141241", "2143141312");
         v1.AdicionarBonus(20f);
         v1.CalcularComissao(3000, 5);
         v1.TrocarSupervisor(v1);

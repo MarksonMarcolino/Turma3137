@@ -16,21 +16,22 @@ import br.com.satc.pessoa.Vendedor;
  */
 public class BancoVendedor {
     public List<Vendedor> vendedores = new ArrayList();
+    
     public List<Vendedor> pesquisaNome (String nome, List<Vendedor> vendedores){
         List<Vendedor> vendedoresNome = new ArrayList();
-        for (VENDEDOR vendedor : vendedores){
+        for (Vendedor vendedor : vendedores){
             if(vendedor.getNome().toLowerCase().contains(nome.toLowerCase())){
                 vendedoresNome.add(vendedor);
             }            
         }    
-        return vendedoresNome;
+    return vendedoresNome;
     }
     public List<Vendedor> pesquisaCodigo (int Codigo, List<Vendedor> vendedor){
-            <Vendedor> pesquisaCodigo = new ArrayList();
+            List<Vendedor> pesquisaCodigo = new ArrayList();
             pesquisaCodigo.add(vendedores.get(Codigo));
             return pesquisaCodigo;
     }
-}
+
     
     
     private BancoVendedor() {

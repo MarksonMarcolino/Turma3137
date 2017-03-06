@@ -11,10 +11,19 @@ package br.com.satc.pessoa;
  */
 public class Vendedor extends Funcionario{
         String especialidade;
+        float comissao;
 
-    public Vendedor(String especialidade, String setor, String cargo, float salario, float salariofinal, String nome, String rg, String cpf) {
-        super(setor, cargo, salario, salariofinal, nome, rg, cpf);
+
+    public Vendedor(String especialidade, String setor, String cargo, float salario, String nome, String rg, String cpf) {
+        super(setor, cargo, salario, nome, rg, cpf);
         this.especialidade=especialidade;
+    }
+        public float getComissao() {
+        return comissao;
+    }
+
+    public void setComissao(float comissao) {
+        this.comissao = comissao;
     }
 
     public String getEspecialidade() {
@@ -27,7 +36,9 @@ public class Vendedor extends Funcionario{
 
     @Override
     public String retornaDados() {
-        throw new UnsupportedOperationException("Nome:"+this.getNome()+"\nEspecialidade:"+this.getEspecialidade()+"\nRG:"+this.getRg()+"\nCPF:"+this.getCpf()+"\nSalario:"+this.getSalario()+"\nSetor:"+this.getSetor()+"\nCargo:"+this.getCargo()+"\nSalario Final:"+this.getSalariofinal()+"\nComissao:"+this.getComissao()+"\nSupervisor:"+this.getSupervisor().getNome());
+        String oi;
+     oi="Nome:"+this.getNome()+"\nEspecialidade:"+this.getEspecialidade()+"\nRG:"+this.getRg()+"\nCPF:"+this.getCpf()+"\nSalario:"+this.getSalario()+"\nSetor:"+this.getSetor()+"\nCargo:"+this.getCargo()+"\nSalario Final:"+this.getSalariofinal()+"\nComissao:"+this.getComissao()+"\nSupervisor:"+this.getSupervisor().getNome();
+    return oi;
     }
 
     @Override

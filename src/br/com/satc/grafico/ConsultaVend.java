@@ -5,6 +5,13 @@
  */
 package br.com.satc.grafico;
 
+import TableModel.TableModel;
+import br.com.satc.pessoa.Vendedor;
+import br.com.satc.singleton.BancoVendedor;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Edutec
@@ -88,29 +95,26 @@ public class ConsultaVend extends javax.swing.JInternalFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 423, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 878, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jTFCampoPesquisa)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jBPesquisar)
-                                .addGap(12, 12, 12))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jRBNome)
-                                        .addGap(12, 12, 12))
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(jLPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(2, 2, 2)))
-                                .addComponent(jRBCodigo)
-                                .addGap(55, 55, 55))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(85, 85, 85)
-                        .addComponent(jBSair7, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jTFCampoPesquisa, javax.swing.GroupLayout.DEFAULT_SIZE, 103, Short.MAX_VALUE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jBPesquisar)
+                            .addGap(12, 12, 12))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addComponent(jRBNome)
+                                    .addGap(12, 12, 12))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                    .addComponent(jLPesquisa, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(2, 2, 2)))
+                            .addComponent(jRBCodigo)
+                            .addGap(55, 55, 55)))
+                    .addComponent(jBSair7, javax.swing.GroupLayout.PREFERRED_SIZE, 154, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -149,35 +153,29 @@ public class ConsultaVend extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_jRBNomeActionPerformed
 
     private void jBPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPesquisarActionPerformed
-        List<ANIMAL> alist = new ArrayList();
-        AnimalTableModel atm = new AnimalTableModel(alist);
-        if (jRBNome.isSelected()){
-            if(jCBAtivo.isSelected() && jCBInativo.isSelected()){
-                atm = new AnimalTableModel(BancoAnimal.getInstance().pesquisaNome(
-                    jTFCampoPesquisa.getText(), BancoAnimal.getInstance().animais));
-        }else if(jCBAtivo.isSelected() && !jCBInativo.isSelected()){
-            atm = new AnimalTableModel(BancoAnimal.getInstance().pesquisaNomeStatus(
-                jTFCampoPesquisa.getText(), BancoAnimal.getInstance().animais, 'A'));
-        }else if(!jCBAtivo.isSelected() && jCBInativo.isSelected()){
-            atm = new AnimalTableModel(BancoAnimal.getInstance().pesquisaNomeStatus(
-                jTFCampoPesquisa.getText(), BancoAnimal.getInstance().animais, 'I'));
-        }
-        }if (jRBCodigo.isSelected()){
-            atm = new AnimalTableModel(BancoAnimal.getInstance().pesquisaCodigo(
-                Integer.parseInt(jTFCampoPesquisa.getText()), BancoAnimal.getInstance().animais));
-        }jTabela.setModel(atm);
+           TableModel vtm = null;
+    
+    
+     if (jTFCampoPesquisa.getText().equals("")){
+     JOptionPane.showMessageDialog(this,"Campo em branco.");
+     }
+     else if (jRBCodigo.isSelected()){       
+     try{
+     vtm = new TableModel(BancoVendedor.getInstance().pesquisaCodigo(
+     Integer.parseInt(jTFCampoPesquisa.getText()), BancoVendedor.getInstance().vendedores));
+     }catch(IndexOutOfBoundsException ioobe){
+         JOptionPane.showMessageDialog(this, "Vendedor inexistente.");
+     }
+     }else{
+     vtm = new TableModel(BancoVendedor.getInstance().pesquisaNome(
+     jTFCampoPesquisa.getText(), BancoVendedor.getInstance().vendedores));
+     }
+      jTabela.setModel(vtm);       
     }//GEN-LAST:event_jBPesquisarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jBPesquisar;
-    private javax.swing.JButton jBSair;
-    private javax.swing.JButton jBSair1;
-    private javax.swing.JButton jBSair2;
-    private javax.swing.JButton jBSair3;
-    private javax.swing.JButton jBSair4;
-    private javax.swing.JButton jBSair5;
-    private javax.swing.JButton jBSair6;
     private javax.swing.JButton jBSair7;
     private javax.swing.JLabel jLPesquisa;
     private javax.swing.JRadioButton jRBCodigo;

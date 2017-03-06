@@ -97,7 +97,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jMCadastroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMCadastroActionPerformed
         // TODO add your handling code here:
-        ConsultaVend novoCadastro = new ConsultaVend();
+        CadastroVend novoCadastro = new CadastroVend();
         jQuadroInterno.add(novoCadastro);
         novoCadastro.setVisible(true);
     }//GEN-LAST:event_jMCadastroActionPerformed

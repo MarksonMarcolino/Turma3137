@@ -5,6 +5,7 @@
  */
 package br.com.satc.grafico;
 
+import br.com.satc.pessoa.Vendedor;
 import br.com.satc.singleton.BancoVendedor;
 import javax.swing.JOptionPane;
 
@@ -50,6 +51,8 @@ public class EdicaoVend extends javax.swing.JInternalFrame {
         jLabel3 = new javax.swing.JLabel();
         TCodigo = new javax.swing.JTextField();
         BtnPesquisar = new javax.swing.JButton();
+        jLabel9 = new javax.swing.JLabel();
+        TComissao = new javax.swing.JTextField();
 
         jLabel10.setText("Cargo:");
 
@@ -78,6 +81,12 @@ public class EdicaoVend extends javax.swing.JInternalFrame {
             }
         });
 
+        TRg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TRgActionPerformed(evt);
+            }
+        });
+
         jLabel6.setText("Setor:");
 
         jLabel4.setText("CPF:");
@@ -97,6 +106,8 @@ public class EdicaoVend extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel9.setText("Comissão:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -108,39 +119,45 @@ public class EdicaoVend extends javax.swing.JInternalFrame {
                         .addComponent(jLabel1)
                         .addGap(28, 28, 28))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addGap(212, 212, 212))
-                                .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(TNome, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(TCpf, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(TRg, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(TEspecialidade, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel6)
-                                    .addGap(50, 50, 50)
-                                    .addComponent(jLabel10))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(TSetor, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(TCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(18, 18, 18)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel8)
-                                        .addComponent(TSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(BtnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(BtnPesquisar)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(BtnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(212, 212, 212))
+                            .addComponent(TNome)
+                            .addComponent(jLabel7)
+                            .addComponent(TEspecialidade)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(TSetor, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(TCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel8)
+                                    .addComponent(TSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 78, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(BtnEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(BtnPesquisar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(BtnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel6)
+                                .addGap(50, 50, 50)
+                                .addComponent(jLabel10))
                             .addComponent(jLabel3)
-                            .addComponent(TCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(19, 19, 19))))
+                            .addComponent(TCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(TComissao))
+                        .addGap(19, 19, 19))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel4)
+                            .addComponent(TCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(TRg, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel5))
+                        .addGap(21, 21, 21))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,14 +173,18 @@ public class EdicaoVend extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(TNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel4)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(TCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(TRg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel5)
+                .addComponent(jLabel9)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(TRg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(TComissao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel6)
                     .addComponent(jLabel10)
@@ -182,7 +203,7 @@ public class EdicaoVend extends javax.swing.JInternalFrame {
                     .addComponent(BtnEditar)
                     .addComponent(BtnSair)
                     .addComponent(BtnPesquisar))
-                .addGap(17, 17, 17))
+                .addGap(23, 23, 23))
         );
 
         pack();
@@ -194,10 +215,18 @@ public class EdicaoVend extends javax.swing.JInternalFrame {
                 || TEspecialidade.getText().trim().equals("") || TSalario.getText().trim().equals("")
                     || TSetor.getText().trim().equals("") || TCargo.getText().trim().equals("")){
             JOptionPane.showMessageDialog(null, "Não deixe os espaços em branco.");
-            return;
-    }
-        BancoVendedor.getInstance().vendedores.set(Integer.parseInt(TCodigo.getText()), new VENDEDOR(TNome.getText(), TRg.getText()
-        , TCpf.getText(), TEspecialidade.getText(), TSalario.getText(), TSetor.getText(), TCargo.getText()));
+    }else{
+        Float salario=Float.parseFloat(TSalario.getText());   
+        Float comissao=Float.parseFloat(TComissao.getText());
+        BancoVendedor.getInstance().vendedores.get(Integer.parseInt(TCodigo.getText())).setNome(TNome.getText());
+        BancoVendedor.getInstance().vendedores.get(Integer.parseInt(TCodigo.getText())).setRg(TRg.getText());
+        BancoVendedor.getInstance().vendedores.get(Integer.parseInt(TCodigo.getText())).setCpf(TCpf.getText());
+        BancoVendedor.getInstance().vendedores.get(Integer.parseInt(TCodigo.getText())).setEspecialidade(TEspecialidade.getText());
+        BancoVendedor.getInstance().vendedores.get(Integer.parseInt(TCodigo.getText())).setSalario(salario);
+        BancoVendedor.getInstance().vendedores.get(Integer.parseInt(TCodigo.getText())).setComissao(comissao);        
+        BancoVendedor.getInstance().vendedores.get(Integer.parseInt(TCodigo.getText())).setSetor(TSetor.getText());
+        BancoVendedor.getInstance().vendedores.get(Integer.parseInt(TCodigo.getText())).setCargo(TCargo.getText());
+        
         TNome.setText("");
         TRg.setText("");
         TCpf.setText("");
@@ -206,7 +235,8 @@ public class EdicaoVend extends javax.swing.JInternalFrame {
         TSetor.setText("");
         TCargo.setText("");
         JOptionPane.showMessageDialog(null,"Alterações salvas.");
-              
+        }
+        
     }//GEN-LAST:event_BtnEditarActionPerformed
 
     private void TCodigoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TCodigoActionPerformed
@@ -221,19 +251,23 @@ public class EdicaoVend extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
                 try {
             Integer Codigo = Integer.parseInt(TCodigo.getText());
-            TNome.setText(BancoVendedor.getInstance().animais.get(Codigo).getNome());
-            TRg.setText(BancoVendedor.getInstance().animais.get(Codigo).getRg());
-            TEspecialidade.setText(BancoVendedor.getInstance().animais.get(Codigo).getEspecialidade());
+            TNome.setText(BancoVendedor.getInstance().vendedores.get(Codigo).getNome());
+            TRg.setText(BancoVendedor.getInstance().vendedores.get(Codigo).getRg());
+            TEspecialidade.setText(BancoVendedor.getInstance().vendedores.get(Codigo).getEspecialidade());
             TCpf.setText(BancoVendedor.getInstance().vendedores.get(Codigo).getCpf());
             TSetor.setText(BancoVendedor.getInstance().vendedores.get(Codigo).getSetor());
             TCargo.setText(BancoVendedor.getInstance().vendedores.get(Codigo).getCargo());
-            TSalario.setText(BancoVendedor.getInstance().vendedores.get(Codigo).getSalario());
+            TSalario.setText(Float.toString(BancoVendedor.getInstance().vendedores.get(Codigo).getSalario()));
         } catch (NumberFormatException err) {
             JOptionPane.showMessageDialog(null, "Coloque apenas um ID.");
         } catch (IndexOutOfBoundsException ero) {
             JOptionPane.showMessageDialog(null, "ID inexistente.");
         }
     }//GEN-LAST:event_BtnPesquisarActionPerformed
+
+    private void TRgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TRgActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TRgActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
@@ -242,6 +276,7 @@ public class EdicaoVend extends javax.swing.JInternalFrame {
     private javax.swing.JButton BtnSair;
     private javax.swing.JTextField TCargo;
     private javax.swing.JTextField TCodigo;
+    private javax.swing.JTextField TComissao;
     private javax.swing.JTextField TCpf;
     private javax.swing.JTextField TEspecialidade;
     private javax.swing.JTextField TNome;
@@ -257,5 +292,6 @@ public class EdicaoVend extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }
