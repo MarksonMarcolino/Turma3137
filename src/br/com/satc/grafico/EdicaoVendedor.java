@@ -5,6 +5,7 @@
  */
 package br.com.satc.grafico;
 
+import br.com.satc.pessoa.Funcionario;
 import br.com.satc.pessoa.Vendedor;
 import br.com.satc.singleton.VendedorSingleton;
 import javax.swing.JOptionPane;
@@ -56,6 +57,11 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
         txtID = new javax.swing.JTextField();
         jLabel11 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        txtidsuperv = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        btnBuscaSuperv = new javax.swing.JButton();
+
+        setTitle("Editar Vendedor");
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -102,6 +108,15 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
             }
         });
 
+        jLabel12.setText("ID:");
+
+        btnBuscaSuperv.setText("Buscar");
+        btnBuscaSuperv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscaSupervActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -116,7 +131,7 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jLabel2)
-                            .addComponent(txtNome, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE)
+                            .addComponent(txtNome)
                             .addComponent(jLabel3)
                             .addComponent(jLabel4)
                             .addComponent(jLabel5)
@@ -127,23 +142,31 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
                             .addComponent(jLabel7)
                             .addComponent(txtCargo)
                             .addComponent(txtSalário)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 237, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 151, Short.MAX_VALUE)
-                                .addComponent(jButton2))
-                            .addComponent(txtSupervisor)
-                            .addComponent(txtComissao)
                             .addComponent(txtEspecialidade)
+                            .addComponent(txtComissao)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel9)
                                     .addComponent(jLabel10)
                                     .addComponent(jLabel8)
-                                    .addComponent(jLabel11))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
+                                    .addComponent(jLabel11)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(jLabel9)
+                                        .addGap(74, 74, 74)
+                                        .addComponent(jLabel12))
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(txtSupervisor, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(txtidsuperv, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(btnBuscaSuperv)))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(txtID, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton2)))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -169,26 +192,27 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtSupervisor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtidsuperv, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnBuscaSuperv))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel5)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtSetor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addGap(46, 46, 46)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel9)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtSupervisor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel10)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtComissao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(jLabel8)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(txtEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(92, 92, 92))))
+                            .addComponent(jLabel12))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtComissao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -197,7 +221,7 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
                 .addComponent(jLabel7)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtSalário, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 20, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 12, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnCadastrar)
                     .addComponent(jButton1))
@@ -210,8 +234,8 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(12, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -226,18 +250,33 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
 
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         String nome, CPF, RG, setor, cargo, especialidade;
+        Funcionario supervisor;
         float salario;
+        
 
         if(!(txtNome.getText().equals("")||txtCPF.getText().equals("")||txtRG.getText().equals("")||txtSetor.getText().equals("")
             ||txtCargo.getText().equals("")||txtSalário.getText().equals("")||txtEspecialidade.getText().equals(""))){
 
         nome = txtNome.getText(); CPF = txtCPF.getText(); RG = txtRG.getText(); setor = txtSetor.getText();
         cargo = txtCargo.getText(); especialidade = txtEspecialidade.getText();
+        
 
         try{
             salario = Float.parseFloat(txtSalário.getText());
             int id = Integer.parseInt(txtID.getText());
-            VendedorSingleton.getInstance().vendedores.get(id);
+            Vendedor procurado = VendedorSingleton.getInstance().vendedores.get(id);
+            supervisor = VendedorSingleton.getInstance().vendedores.get(Integer.parseInt(txtidsuperv.getText()));
+            
+            procurado.setNome(nome);
+            procurado.setCpf(CPF);
+            procurado.setRg(RG);
+            procurado.setSetor(setor);
+            procurado.setCargo(cargo);
+            procurado.setEspecialidade(especialidade);
+            procurado.setSalario(salario);
+            procurado.setComissao(Float.parseFloat(txtComissao.getText()));
+            procurado.setSupervisor(supervisor);
+            
             
             
             
@@ -248,6 +287,9 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
             txtSetor.setText("");
             txtSalário.setText("");
             txtEspecialidade.setText("");
+            txtComissao.setText("");
+            txtSupervisor.setText("");
+            txtidsuperv.setText("");
 
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"Erro: "+ e);
@@ -272,19 +314,32 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
         txtSetor.setText(procurado.getSetor());
         txtEspecialidade.setText(procurado.getEspecialidade());
         txtSalário.setText(String.valueOf(procurado.getSalario()));
-        txtComissao.setText(String.valueOf(procurado.getComissao()));        
-
+        txtComissao.setText(String.valueOf(procurado.getComissao()));    
+        if(procurado.getSupervisor() != null){
+            txtSupervisor.setText(procurado.getSupervisor().getNome());
+        }
+        
+        
+ 
         
     }//GEN-LAST:event_jButton2ActionPerformed
 
+    private void btnBuscaSupervActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscaSupervActionPerformed
+        int id = Integer.parseInt(txtidsuperv.getText());
+        txtSupervisor.setText(VendedorSingleton.getInstance().vendedores.get(id).getNome());
+        
+    }//GEN-LAST:event_btnBuscaSupervActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnBuscaSuperv;
     private javax.swing.JButton btnCadastrar;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -304,5 +359,6 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
     private javax.swing.JTextField txtSalário;
     private javax.swing.JTextField txtSetor;
     private javax.swing.JTextField txtSupervisor;
+    private javax.swing.JTextField txtidsuperv;
     // End of variables declaration//GEN-END:variables
 }

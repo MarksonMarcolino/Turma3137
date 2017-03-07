@@ -49,7 +49,11 @@ public class VendedorTableModel extends AbstractTableModel{
             case 8:
                 return v.getSalariofinal();
             case 9:
-                return v.getSupervisor();
+                if (v.getSupervisor() != null){
+                    return v.getSupervisor().getNome();
+                }else{
+                    return "Não há";
+                }
             case 10:
                 return VendedorSingleton.getInstance().vendedores.indexOf(v);
         }

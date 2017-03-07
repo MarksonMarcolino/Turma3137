@@ -48,6 +48,8 @@ public class CadastroVendedor extends javax.swing.JInternalFrame {
 
         jTextField3.setText("jTextField3");
 
+        setTitle("Cadastro de Vendedor");
+
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         jLabel1.setText("Cadastro de Vendedor");
 
