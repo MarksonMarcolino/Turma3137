@@ -253,7 +253,7 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
     private void btnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastrarActionPerformed
         String nome, CPF, RG, setor, cargo, especialidade;
         Funcionario supervisor;
-        float salario;
+        float salario, comissao;
         
 
         if(!(txtNome.getText().equals("")||txtCPF.getText().equals("")||txtRG.getText().equals("")||txtSetor.getText().equals("")
@@ -264,6 +264,7 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
         
 
         try{
+            comissao = Float.parseFloat(txtComissao.getText());
             salario = Float.parseFloat(txtSalário.getText());
             int id = Integer.parseInt(txtID.getText());
             Vendedor procurado = VendedorSingleton.getInstance().vendedores.get(id);
@@ -278,6 +279,7 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
             procurado.setSalario(salario);
             procurado.setComissao(Float.parseFloat(txtComissao.getText()));
             procurado.setSupervisor(supervisor);
+            procurado.setSalariofinal(salario+comissao);
             
             
             
