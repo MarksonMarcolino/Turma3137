@@ -97,6 +97,8 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
 
         jLabel9.setText("Supervisor:");
 
+        txtSupervisor.setEditable(false);
+
         jLabel10.setText("Comissão:");
 
         jLabel11.setText("ID:");
@@ -154,7 +156,7 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
                                     .addComponent(jLabel11)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(jLabel9)
-                                        .addGap(74, 74, 74)
+                                        .addGap(87, 87, 87)
                                         .addComponent(jLabel12))
                                     .addGroup(jPanel1Layout.createSequentialGroup()
                                         .addComponent(txtSupervisor, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -290,6 +292,7 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
             txtComissao.setText("");
             txtSupervisor.setText("");
             txtidsuperv.setText("");
+            txtID.setText("");
 
         }catch(Exception e){
             JOptionPane.showMessageDialog(null,"Erro: "+ e);
