@@ -23,17 +23,27 @@ public class Vendedor extends Funcionário {
 
     public Vendedor(String nome, String rg, String cpf, String setor, String cargo,String especialidade, Float salario) {
         super(nome, rg, cpf, setor, cargo, salario);
-        this.setEspecialidade(especialidade);
+        this.especialidade = especialidade;
+        this.comissao = 0;
+        this.supervisor = null;
     }
 
     @Override
     public String retornaDados() {
-        throw new UnsupportedOperationException("Not supported yet."); 
+            String dados = "Nome: "+this.getNome()
+                +"\nRG: "+this.getRg()
+                 +"\nCPF: "+this.getCpf()
+                  +"\nSetor: "+this.getSetor()
+                   +"\nCargo: "+this.getCargo()
+                    +"\nSalário: "+this.getSalario()
+                     +"\nSalário Final: "+this.getSalariofinal()
+                      +"\nSupervisor: "+this.getEspecialidade();
+        return dados;
     }
 
     @Override
     public void AlteraNome(String nome) {
-        throw new UnsupportedOperationException("Not supported yet."); 
+        this.setNome(nome); 
     }
 
     @Override

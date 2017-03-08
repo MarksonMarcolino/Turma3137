@@ -78,6 +78,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMEditar.setText("Editar");
 
         jMIEditarVendedor.setText("Vendedor");
+        jMIEditarVendedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIEditarVendedorActionPerformed(evt);
+            }
+        });
         jMEditar.add(jMIEditarVendedor);
 
         jBarraMenu.add(jMEditar);
@@ -110,6 +115,13 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jQuadradoInterno.add(novaConsulta);
         novaConsulta.setVisible(true);
     }//GEN-LAST:event_jMIConsultaVendedorActionPerformed
+
+    private void jMIEditarVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIEditarVendedorActionPerformed
+        EditarVendedor novaEdicao = new EditarVendedor();
+        jQuadradoInterno.add(novaEdicao);
+        novaEdicao.setVisible(true);
+        
+    }//GEN-LAST:event_jMIEditarVendedorActionPerformed
 
     /**
      * @param args the command line arguments

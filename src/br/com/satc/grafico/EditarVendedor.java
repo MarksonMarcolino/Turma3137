@@ -5,6 +5,11 @@
  */
 package br.com.satc.grafico;
 
+import br.com.satc.pessoa.Funcionário;
+import br.com.satc.pessoa.Vendedor;
+import br.com.satc.singleton.Singleton;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Edutec
@@ -27,21 +32,358 @@ public class EditarVendedor extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLTitulo = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jTFCodigoSupervisor = new javax.swing.JTextField();
+        jLNome = new javax.swing.JLabel();
+        jTFNome = new javax.swing.JTextField();
+        jLRg = new javax.swing.JLabel();
+        jTFRg = new javax.swing.JTextField();
+        jLCpf = new javax.swing.JLabel();
+        jTFCpf = new javax.swing.JTextField();
+        jLRenda = new javax.swing.JLabel();
+        jTFSetor = new javax.swing.JTextField();
+        jBEditar = new javax.swing.JButton();
+        jBSair = new javax.swing.JButton();
+        jBPesquisar = new javax.swing.JButton();
+        jLRenda1 = new javax.swing.JLabel();
+        jTFCargo = new javax.swing.JTextField();
+        jLRenda2 = new javax.swing.JLabel();
+        jTFEspecialidade = new javax.swing.JTextField();
+        jLRenda3 = new javax.swing.JLabel();
+        jTFSalario = new javax.swing.JTextField();
+        jLRenda4 = new javax.swing.JLabel();
+        jTFComissao = new javax.swing.JTextField();
+        jLNome1 = new javax.swing.JLabel();
+        jTFSupervisor = new javax.swing.JTextField();
+        jLNome2 = new javax.swing.JLabel();
+        jTFCodigo = new javax.swing.JTextField();
+        jBPesquisarSuperv = new javax.swing.JButton();
+
+        jLTitulo.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLTitulo.setText("Edição de Vendedor");
+
+        jLabel1.setText("Código");
+
+        jLNome.setText("Nome");
+
+        jTFNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTFNomeActionPerformed(evt);
+            }
+        });
+
+        jLRg.setText("RG");
+
+        jTFRg.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTFRgActionPerformed(evt);
+            }
+        });
+
+        jLCpf.setText("CPF");
+
+        jTFCpf.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTFCpfActionPerformed(evt);
+            }
+        });
+
+        jLRenda.setText("Setor");
+
+        jBEditar.setText("Editar");
+        jBEditar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBEditarActionPerformed(evt);
+            }
+        });
+
+        jBSair.setText("Sair");
+        jBSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBSairActionPerformed(evt);
+            }
+        });
+
+        jBPesquisar.setText("Pesquisar");
+        jBPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBPesquisarActionPerformed(evt);
+            }
+        });
+
+        jLRenda1.setText("Cargo");
+
+        jLRenda2.setText("Especialidade");
+
+        jLRenda3.setText("Salário");
+
+        jLRenda4.setText("Comissão");
+
+        jLNome1.setText("Supervisor");
+
+        jTFSupervisor.setEditable(false);
+        jTFSupervisor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTFSupervisorActionPerformed(evt);
+            }
+        });
+
+        jLNome2.setText("Código do Supervisor");
+
+        jBPesquisarSuperv.setText("Pesquisar");
+        jBPesquisarSuperv.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBPesquisarSupervActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTFRg, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTFSupervisor, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLRg)
+                        .addGap(111, 111, 111)
+                        .addComponent(jLNome1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLCpf)
+                        .addGap(102, 102, 102)
+                        .addComponent(jLNome2))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTFSetor, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTFComissao, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLRenda1)
+                    .addComponent(jTFCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLRenda2)
+                    .addComponent(jTFEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLRenda3)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTFSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jBEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jBSair))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(44, 44, 44)
+                        .addComponent(jLTitulo))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLNome)
+                        .addGap(98, 98, 98)
+                        .addComponent(jLabel1))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTFNome, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTFCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(10, 10, 10)
+                        .addComponent(jBPesquisar))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTFCpf, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLRenda))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLRenda4)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jTFCodigoSupervisor, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jBPesquisarSuperv)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLTitulo)
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLNome))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTFNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBPesquisar)
+                    .addComponent(jTFCodigo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLRg)
+                    .addComponent(jLNome1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTFRg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTFSupervisor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLCpf)
+                    .addComponent(jLNome2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTFCpf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTFCodigoSupervisor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jBPesquisarSuperv))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLRenda)
+                    .addComponent(jLRenda4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTFSetor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jTFComissao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLRenda1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTFCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLRenda2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTFEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLRenda3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jTFSalario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jBEditar, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jBSair)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jTFNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTFNomeActionPerformed
+
+    private void jTFRgActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFRgActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTFRgActionPerformed
+
+    private void jTFCpfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFCpfActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTFCpfActionPerformed
+
+    private void jBEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEditarActionPerformed
+        String nome, rg, cpf, setor, cargo, especialidade;
+        Funcionário supervisor;
+        float salario, comissao;
+        if(!(jTFCpf.getText().equals("")||jTFRg.getText().equals("")||jTFNome.getText().equals("")||jTFSetor.getText().equals("")||jTFCargo.getText().equals("")||jTFEspecialidade.getText().equals("")||jTFSalario.getText().equals(""))){
+            nome = jTFNome.getText();
+            rg = jTFRg.getText();
+            cpf = jTFCpf.getText();
+            setor = jTFSetor.getText();
+            cargo = jTFCargo.getText();
+            especialidade = jTFEspecialidade.getText();
+            try{
+                salario = Float.parseFloat(jTFSalario.getText());
+                comissao = Float.parseFloat(jTFComissao.getText());
+                int codigo = Integer.parseInt(jTFCodigo.getText());
+                Vendedor procurar = Singleton.getInstance().vendedores.get(codigo);
+                supervisor = Singleton.getInstance().vendedores.get(Integer.parseInt(jTFCodigoSupervisor.getText()));
+                procurar.setNome(nome);
+                procurar.setCpf(rg);
+                procurar.setRg(cpf);
+                procurar.setSetor(setor);
+                procurar.setCargo(cargo);
+                procurar.setEspecialidade(especialidade);
+                procurar.setSalario(salario);
+                procurar.setComissao(Float.parseFloat(jTFComissao.getText()));
+                procurar.setSupervisor(supervisor);
+                procurar.setSalariofinal(salario+comissao);
+                jTFNome.setText("");
+                jTFRg.setText("");
+                jTFCpf.setText("");
+                jTFCargo.setText("");
+                jTFSetor.setText("");
+                jTFSalario.setText("");
+                jTFEspecialidade.setText("");
+                jTFComissao.setText("");
+                jTFSupervisor.setText("");
+                jTFCodigoSupervisor.setText("");
+                jTFCodigo.setText("");
+            }catch(NumberFormatException nfe){
+                JOptionPane.showMessageDialog(this, "Error!!\n"+nfe);
+            }
+        }else{
+            JOptionPane.showMessageDialog(this, "Campo em branco!");
+        }
+    }//GEN-LAST:event_jBEditarActionPerformed
+
+    private void jBSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBSairActionPerformed
+        dispose();
+    }//GEN-LAST:event_jBSairActionPerformed
+
+    private void jBPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPesquisarActionPerformed
+        
+        
+        
+        
+        int id = Integer.parseInt(jTFCodigo.getText());
+        Vendedor procurar = Singleton.getInstance().vendedores.get(id);
+        jTFNome.setText(procurar.getNome());
+        jTFRg.setText(procurar.getRg());
+        jTFCpf.setText(procurar.getCpf());
+        jTFCargo.setText(procurar.getCargo());
+        jTFSetor.setText(procurar.getSetor());
+        jTFEspecialidade.setText(procurar.getEspecialidade());
+        jTFSalario.setText(String.valueOf(procurar.getSalario()));
+        jTFComissao.setText(String.valueOf(procurar.getComissao()));    
+        if(procurar.getSupervisor() != null){
+            jTFSupervisor.setText(procurar.getSupervisor().getNome());
+        }
+        
+        
+ 
+        
+     
+
+    }//GEN-LAST:event_jBPesquisarActionPerformed
+
+    private void jTFSupervisorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTFSupervisorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTFSupervisorActionPerformed
+
+    private void jBPesquisarSupervActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBPesquisarSupervActionPerformed
+        int id = Integer.parseInt(jTFCodigoSupervisor.getText());
+        jTFSupervisor.setText(Singleton.getInstance().vendedores.get(id).getNome());
+    }//GEN-LAST:event_jBPesquisarSupervActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBEditar;
+    private javax.swing.JButton jBPesquisar;
+    private javax.swing.JButton jBPesquisarSuperv;
+    private javax.swing.JButton jBSair;
+    private javax.swing.JLabel jLCpf;
+    private javax.swing.JLabel jLNome;
+    private javax.swing.JLabel jLNome1;
+    private javax.swing.JLabel jLNome2;
+    private javax.swing.JLabel jLRenda;
+    private javax.swing.JLabel jLRenda1;
+    private javax.swing.JLabel jLRenda2;
+    private javax.swing.JLabel jLRenda3;
+    private javax.swing.JLabel jLRenda4;
+    private javax.swing.JLabel jLRg;
+    private javax.swing.JLabel jLTitulo;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField jTFCargo;
+    private javax.swing.JTextField jTFCodigo;
+    private javax.swing.JTextField jTFCodigoSupervisor;
+    private javax.swing.JTextField jTFComissao;
+    private javax.swing.JTextField jTFCpf;
+    private javax.swing.JTextField jTFEspecialidade;
+    private javax.swing.JTextField jTFNome;
+    private javax.swing.JTextField jTFRg;
+    private javax.swing.JTextField jTFSalario;
+    private javax.swing.JTextField jTFSetor;
+    private javax.swing.JTextField jTFSupervisor;
     // End of variables declaration//GEN-END:variables
 }
