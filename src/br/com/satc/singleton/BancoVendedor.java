@@ -29,6 +29,24 @@ public class BancoVendedor {
        return vendedoresNome;
    }
        
+       public int pesquisaNomeSupervisor (String nome, List<Vendedor> vendedores){
+           int cont = 0, index = -1;
+        
+       for (Vendedor vendedor : vendedores) {
+       if(vendedor.getNome().toLowerCase().contains(nome.toLowerCase())){
+           index = vendedores.indexOf(vendedor);
+           cont++;
+       }
+       }
+       if (cont == 1 || index == -1){
+           return index;
+       }else{
+          return -50;         
+       }
+       }
+       
+          
+       
        public List<Vendedor> pesquisaCodigo(int codigo, List<Vendedor> vendedores){
        List<Vendedor> pesquisaCodigo = new ArrayList();
        pesquisaCodigo.add(vendedores.get(codigo));

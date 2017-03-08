@@ -28,7 +28,7 @@ public class VendedorTableModel extends AbstractTableModel{
 
     @Override
     public int getColumnCount() {
-        return 9;
+        return 10;
     }
 
     @Override
@@ -53,6 +53,12 @@ public class VendedorTableModel extends AbstractTableModel{
             return v.getComissao();
         case 8:
             return v.getSalario()+v.getComissao();
+        case 9:
+            if (v.getSupervisor() != null){
+            return v.getSupervisor().getNome();
+            }else{
+                return "Não há.";
+            }
          
     }
     return null;
@@ -79,6 +85,8 @@ public class VendedorTableModel extends AbstractTableModel{
                 return "Comissão";
             case 8:
                 return "Salário Final";
+            case 9:
+                return "Supervisor";
         }
         return null;
     }

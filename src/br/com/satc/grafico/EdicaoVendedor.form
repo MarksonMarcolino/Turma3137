@@ -19,60 +19,89 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace min="-2" pref="185" max="-2" attributes="0"/>
+              <Component id="jLID" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="jTID" min="-2" pref="91" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jBProcurar" min="-2" pref="81" max="-2" attributes="0"/>
+              <EmptySpace min="172" max="32767" attributes="0"/>
+          </Group>
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jBEditar" min="-2" pref="90" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jBSair" min="-2" pref="90" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLRG" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLCPF" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLSetor" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="jTRG" alignment="0" pref="298" max="32767" attributes="0"/>
+                                      <Component id="jTCPF" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jTSetor" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jLNome" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jTNome" alignment="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jTSalario" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTEspecialidade" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jTComissao" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="jTCargo" alignment="1" min="-2" pref="298" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="jLCargo" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLSalario" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLEspecialidade" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="jLComissao" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="jLTitulo" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="217" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="1" attributes="0">
                   <Group type="102" attributes="0">
-                      <Component id="jBEditar" min="-2" pref="90" max="-2" attributes="0"/>
+                      <Component id="jBSupNome" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="jBSair" min="-2" pref="90" max="-2" attributes="0"/>
+                      <Component id="jBSupID" min="-2" pref="106" max="-2" attributes="0"/>
                   </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jLRG" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLCPF" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="jLSetor" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="jTRG" alignment="0" pref="298" max="32767" attributes="0"/>
-                              <Component id="jTCPF" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jTSetor" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLNome" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTNome" alignment="0" max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="jLNomeSupervisor" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jTNomeSupervisor" alignment="0" min="-2" pref="298" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="103" alignment="1" groupAlignment="1" max="-2" attributes="0">
-                              <Component id="jTSalario" alignment="0" pref="298" max="32767" attributes="0"/>
-                              <Component id="jTEspecialidade" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLCargo" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLSalario" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLEspecialidade" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLComissao" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jTComissao" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <Component id="jTCargo" alignment="1" min="-2" pref="298" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
-              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-          </Group>
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="185" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
-                      <Component id="jLTitulo" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="jLID" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="jTID" min="-2" pref="91" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jBProcurar" min="-2" pref="81" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="jLIDSupervisor" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                          <Component id="jTIDSupervisor" alignment="1" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="192" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -86,26 +115,9 @@
                   <Component id="jTID" alignment="3" min="-2" max="-2" attributes="0"/>
                   <Component id="jBProcurar" alignment="3" min="-2" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="34" max="32767" attributes="0"/>
+              <EmptySpace pref="20" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="jLNome" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jTNome" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLRG" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jTRG" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLCPF" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jTCPF" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                      <Component id="jLSetor" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jTSetor" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
                       <Component id="jLCargo" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jTCargo" min="-2" max="-2" attributes="0"/>
@@ -122,13 +134,50 @@
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="jTComissao" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jLNome" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jTNome" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLRG" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jTRG" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLCPF" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jTCPF" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="jLSetor" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jTSetor" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="jBEditar" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="jBSair" alignment="3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jLNomeSupervisor" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jTNomeSupervisor" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jLIDSupervisor" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="jTIDSupervisor" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <Component id="jBSupID" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jBEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jBSair" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+                  <Component id="jBSupNome" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -228,6 +277,39 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="ID do Vendedor :"/>
       </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLNomeSupervisor">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nome do Supervisor :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTNomeSupervisor">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jTNomeSupervisorActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jTIDSupervisor">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLIDSupervisor">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ID do Supervisor :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JButton" name="jBSupID">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Procurar ID"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBSupIDActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jBSupNome">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Procurar Nome"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jBSupNomeActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

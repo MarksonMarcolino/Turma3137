@@ -15,6 +15,7 @@ public class Vendedor extends Funcionario{
     float salarioFinal, comissao;
     String especialidade;
 
+
     public String getEspecialidade() {
         return especialidade;
     }

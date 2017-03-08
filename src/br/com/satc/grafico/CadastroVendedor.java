@@ -169,6 +169,7 @@ public class CadastroVendedor extends javax.swing.JInternalFrame {
     private void jBCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBCadastrarActionPerformed
     String nome,rg,cpf,setor,cargo,especialidade;
     float salario;
+    int contador = 0;
     
     if (!(jTNome.getText().equals("") || jTRG.getText().equals("") 
        || jTCPF.getText().equals("") || jTSetor.getText().equals("")
@@ -182,7 +183,7 @@ public class CadastroVendedor extends javax.swing.JInternalFrame {
        cargo = jTCargo.getText();
        especialidade= jTEspecialidade.getText();
        try{
-       salario = Float.parseFloat(jTSalario.getText());
+           salario = Float.parseFloat(jTSalario.getText());
            BancoVendedor.getInstance().vendedores.add(new Vendedor(nome, rg, cpf, setor, cargo, salario, especialidade));
            JOptionPane.showMessageDialog(this, "Êxito no Cadastro.");
            jTCPF.setText("");
@@ -192,6 +193,7 @@ public class CadastroVendedor extends javax.swing.JInternalFrame {
            jTRG.setText("");
            jTSalario.setText("");
            jTSetor.setText("");
+           contador++;
        }catch(NumberFormatException nfe){
        JOptionPane.showMessageDialog(this,"Salário inválido : \n"+nfe);
        }
