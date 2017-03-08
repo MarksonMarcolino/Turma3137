@@ -29,30 +29,40 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jlblCadVendedor" max="32767" attributes="0"/>
-                      <Component id="jlblNome" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jlblRG" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jlblCPF" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jlblSalario" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jlblSetor" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="jtxtNome" alignment="0" max="32767" attributes="0"/>
-                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="jtxtSetor" alignment="0" pref="135" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jlblCadVendedor" max="32767" attributes="0"/>
+                          <Component id="jtxtNome" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jtxtSetor" alignment="0" max="32767" attributes="0"/>
                           <Component id="jtxtSalario" alignment="0" max="32767" attributes="0"/>
                           <Component id="jtxtCPF" alignment="0" max="32767" attributes="0"/>
                           <Component id="jtxtRG" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jtxtCargo" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jtxtEspeci" alignment="0" max="32767" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <Component id="jbtnCadastrar" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jbtnSair" min="-2" pref="68" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jlblNome" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jlblRG" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jlblCPF" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jlblSalario" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jlblSetor" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jlblCargo" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
                       </Group>
+                      <EmptySpace pref="69" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="jlblCargo" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="jlblEspeci" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
-                      <Component id="jtxtEspeci" alignment="0" pref="135" max="32767" attributes="0"/>
-                      <Component id="jtxtCargo" alignment="0" max="32767" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="jlblEspeci" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
-                  <Component id="jbtnSair" alignment="0" min="-2" pref="68" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="69" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -90,8 +100,11 @@
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jtxtEspeci" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="jbtnSair" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jbtnSair" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbtnCadastrar" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="15" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -160,6 +173,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnSairActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbtnCadastrar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cadastrar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnCadastrarActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

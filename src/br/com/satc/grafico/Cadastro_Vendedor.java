@@ -5,6 +5,10 @@
  */
 package br.com.satc.grafico;
 
+import br.com.satc.pessoa.Vendedor;
+import br.com.satc.singleton.Classe_Singleton;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Edutec
@@ -44,6 +48,7 @@ public class Cadastro_Vendedor extends javax.swing.JInternalFrame {
         jlblEspeci = new javax.swing.JLabel();
         jtxtEspeci = new javax.swing.JTextField();
         jbtnSair = new javax.swing.JButton();
+        jbtnCadastrar = new javax.swing.JButton();
 
         jToggleButton1.setText("jToggleButton1");
 
@@ -71,6 +76,13 @@ public class Cadastro_Vendedor extends javax.swing.JInternalFrame {
             }
         });
 
+        jbtnCadastrar.setText("Cadastrar");
+        jbtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jbtnCadastrarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -78,26 +90,33 @@ public class Cadastro_Vendedor extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jlblCadVendedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jlblNome)
-                        .addComponent(jlblRG)
-                        .addComponent(jlblCPF)
-                        .addComponent(jlblSalario)
-                        .addComponent(jlblSetor)
-                        .addComponent(jtxtNome)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jtxtSetor, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
-                            .addComponent(jtxtSalario, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtxtCPF, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jtxtRG, javax.swing.GroupLayout.Alignment.LEADING)))
-                    .addComponent(jlblCargo)
-                    .addComponent(jlblEspeci)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jtxtEspeci, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
-                        .addComponent(jtxtCargo, javax.swing.GroupLayout.Alignment.LEADING))
-                    .addComponent(jbtnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(69, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jlblCadVendedor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jtxtNome)
+                            .addComponent(jtxtSetor)
+                            .addComponent(jtxtSalario)
+                            .addComponent(jtxtCPF)
+                            .addComponent(jtxtRG)
+                            .addComponent(jtxtCargo)
+                            .addComponent(jtxtEspeci)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(jbtnCadastrar)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jbtnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 68, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jlblNome)
+                                    .addComponent(jlblRG)
+                                    .addComponent(jlblCPF)
+                                    .addComponent(jlblSalario)
+                                    .addComponent(jlblSetor)
+                                    .addComponent(jlblCargo))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap(69, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jlblEspeci)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -133,20 +152,57 @@ public class Cadastro_Vendedor extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jtxtEspeci, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jbtnSair)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jbtnSair)
+                    .addComponent(jbtnCadastrar))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void jbtnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnSairActionPerformed
-        
+    dispose();
     }//GEN-LAST:event_jbtnSairActionPerformed
+
+    private void jbtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jbtnCadastrarActionPerformed
+       String nome, rg, cpf, cargo, setor, especialidade;
+    float salario, salariof = 0, comissao = 0;
+    
+    if (!(jtxtNome.getText().equals("") || jtxtRG.getText().equals("") || jtxtCPF.getText().equals("") || jtxtSetor.getText().equals("")
+       || jtxtCargo.getText().equals("") || jtxtEspeci.getText().equals("")|| jtxtSalario.getText().equals(""))){
+        
+       nome = jtxtNome.getText();
+       rg = jtxtRG.getText();
+       cpf = jtxtCPF.getText();
+       cargo = jtxtCargo.getText();
+       setor = jtxtSetor.getText();
+       
+       especialidade = jtxtEspeci.getText();
+       try{
+       salario = Float.parseFloat(jtxtSalario.getText());
+           Classe_Singleton.getInstance().vendedores.add(new Vendedor(nome, rg, cpf, cargo, setor, especialidade, salario, salariof, comissao));
+           JOptionPane.showMessageDialog(this, "Cadastrado com sucesso!.");
+           jtxtCPF.setText("");
+           jtxtCargo.setText("");
+           jtxtEspeci.setText("");
+           jtxtNome.setText("");
+           jtxtRG.setText("");
+           jtxtSalario.setText("");
+           jtxtSetor.setText("");
+       }catch(NumberFormatException nfe){
+       JOptionPane.showMessageDialog(this,"Salário inválido : \n"+nfe);
+       }
+    }else{
+      JOptionPane.showMessageDialog(this,"Campos em Branco.");
+        
+    }
+    }//GEN-LAST:event_jbtnCadastrarActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JToggleButton jToggleButton1;
+    private javax.swing.JButton jbtnCadastrar;
     private javax.swing.JButton jbtnSair;
     private javax.swing.JLabel jlblCPF;
     private javax.swing.JLabel jlblCadVendedor;

@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JInternalFrameFormInfo">
+  <SyntheticProperties>
+    <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
+  </SyntheticProperties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jtxtNome" min="-2" pref="214" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jtxtSetor" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jlblCargo" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jlblSalario" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jtxtSalario" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jlblEspeci" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jtxtEspecialidade" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jlblComissao" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jtxtComissao" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jbtnEditar" min="-2" pref="90" max="-2" attributes="0"/>
+                                  <EmptySpace pref="34" max="32767" attributes="0"/>
+                                  <Component id="jbtnSair" min="-2" pref="90" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Component id="jlblCPF" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Component id="jtxtCargo" alignment="0" min="-2" pref="214" max="-2" attributes="0"/>
+                          <Component id="jlblSetor" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                              <Component id="jtxtCPF" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jlblRG" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jtxtRG" alignment="0" min="-2" pref="214" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="jlblID" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="jtxtID" min="-2" pref="91" max="-2" attributes="0"/>
+                              <EmptySpace max="32767" attributes="0"/>
+                              <Component id="jbtnProcurar" min="-2" pref="81" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="jlblID1" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="jlblID2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="jtxtNomeSupervisor" pref="89" max="32767" attributes="0"/>
+                                  <Component id="jtxtIDSupervisor" max="32767" attributes="0"/>
+                              </Group>
+                              <EmptySpace type="separate" max="-2" attributes="0"/>
+                              <Component id="jbtnProcurar1" min="-2" pref="81" max="-2" attributes="0"/>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Component id="jlblNome" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlblTitulo" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jlblTitulo" min="-2" pref="26" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
+              <Component id="jlblNome" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jtxtNome" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlblID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtxtID" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbtnProcurar" alignment="3" min="-2" pref="23" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jlblRG" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jtxtRG" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jlblID1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jtxtIDSupervisor" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jbtnProcurar1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <Component id="jlblCPF" alignment="0" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jtxtCPF" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jlblID2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jtxtNomeSupervisor" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jlblSetor" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jtxtSetor" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jlblCargo" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jtxtCargo" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jlblSalario" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jtxtSalario" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jlblEspeci" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jtxtEspecialidade" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jlblComissao" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jtxtComissao" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="jbtnEditar" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="jbtnSair" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="46" max="32767" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="jlblComissao">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Comiss&#xe3;o :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtCPF">
+    </Component>
+    <Component class="javax.swing.JButton" name="jbtnProcurar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Procurar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnProcurarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="jbtnSair">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sair"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnSairActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtID">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlblCPF">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="CPF :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlblID">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ID do Vendedor :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlblNome">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nome :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlblSetor">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Setor :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlblSalario">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Sal&#xe1;rio :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtSetor">
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jtxtSetorActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtNome">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtCargo">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtEspecialidade">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlblCargo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Cargo :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlblRG">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="RG :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlblTitulo">
+      <Properties>
+        <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+          <Font name="Dialog" size="24" style="0"/>
+        </Property>
+        <Property name="text" type="java.lang.String" value="Edi&#xe7;&#xe3;o de Vendedor"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlblEspeci">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Especialidade :"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtSalario">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtRG">
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtComissao">
+    </Component>
+    <Component class="javax.swing.JButton" name="jbtnEditar">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Editar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnEditarActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlblID1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="ID do Supervisor:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtIDSupervisor">
+    </Component>
+    <Component class="javax.swing.JButton" name="jbtnProcurar1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Procurar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jbtnProcurar1ActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JLabel" name="jlblID2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Nome do Supervisor:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JTextField" name="jtxtNomeSupervisor">
+    </Component>
+  </SubComponents>
+</Form>

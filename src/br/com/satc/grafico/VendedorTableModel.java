@@ -50,7 +50,8 @@ public class VendedorTableModel extends AbstractTableModel {
             case 8:
                 return v.getSalariof();
             case 9:
-                return v.getComissao();    
+                return v.getComissao();      
+              
         }
         return null;
     }
@@ -78,6 +79,7 @@ public class VendedorTableModel extends AbstractTableModel {
                 return "Salariof";
             case 9:
                 return "Comissão";
+            
         }
         return"";
     }
