@@ -41,5 +41,7 @@ public class Vendedor extends Funcionário {
     public void setEspecialidade(String Especialidade) {
         this.Especialidade = Especialidade;
     }
+
+  
     
 }

@@ -6,7 +6,7 @@ public abstract class Funcionário extends Pessoa implements IFuncionário{
     float salario;
     float comissao;
     float salariofinal;
-    Funcionário Supervisor;
+    String Supervisor;
     
     public Funcionário(String nome, String rg, String cpf,String setor,String cargo,float salario) {
         super(nome, rg, cpf);
@@ -25,7 +25,7 @@ public abstract class Funcionário extends Pessoa implements IFuncionário{
     public void Adicionarbonus(float bonus){
         this.setSalariofinal(this.salariofinal+bonus);    
     }
-    public void Trocarsupervisor(Funcionário superv){
+    public void Trocarsupervisor(String superv){
         this.setSupervisor(superv);   
     }
 
@@ -69,11 +69,11 @@ public abstract class Funcionário extends Pessoa implements IFuncionário{
         this.salariofinal = salariofinal;
     }
 
-    public Funcionário getSupervisor() {
+    public String getSupervisor() {
         return Supervisor;
     }
 
-    public void setSupervisor(Funcionário Supervisor) {
+    public void setSupervisor(String Supervisor) {
         this.Supervisor = Supervisor;
     }
     

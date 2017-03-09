@@ -47,7 +47,7 @@ public class VendedorTableModel extends AbstractTableModel{
             case 5:
                 return v.getSalario();
             case 6:
-                return v.getSupervisor();
+                return "";
             case 7:
                 return v.getEspecialidade();
             case 8:

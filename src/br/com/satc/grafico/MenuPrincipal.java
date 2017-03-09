@@ -44,11 +44,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jQuadradoInterno.getContentPane().setLayout(jQuadradoInternoLayout);
         jQuadradoInternoLayout.setHorizontalGroup(
             jQuadradoInternoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 704, Short.MAX_VALUE)
+            .addGap(0, 778, Short.MAX_VALUE)
         );
         jQuadradoInternoLayout.setVerticalGroup(
             jQuadradoInternoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 582, Short.MAX_VALUE)
+            .addGap(0, 619, Short.MAX_VALUE)
         );
 
         jMCadastro.setText("Cadastro");
@@ -78,6 +78,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMEditar.setText("Editar");
 
         jMIEdicaoVendedor.setText("Vendedor");
+        jMIEdicaoVendedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMIEdicaoVendedorActionPerformed(evt);
+            }
+        });
         jMEditar.add(jMIEdicaoVendedor);
 
         jBarraMenu.add(jMEditar);
@@ -92,7 +97,9 @@ public class MenuPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jQuadradoInterno, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jQuadradoInterno, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -110,6 +117,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jQuadradoInterno.add(novoConsulta);
         novoConsulta.setVisible(true);
     }//GEN-LAST:event_jMIConsultaVendedorActionPerformed
+
+    private void jMIEdicaoVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMIEdicaoVendedorActionPerformed
+        EditarVendedor novaEdicao = new EditarVendedor();
+        jQuadradoInterno.add(novaEdicao);
+        novaEdicao.setVisible(true);
+    }//GEN-LAST:event_jMIEdicaoVendedorActionPerformed
 
     /**
      * @param args the command line arguments
