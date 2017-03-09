@@ -9,10 +9,18 @@ package br.com.satc.pessoa;
  *
  * @author Edutec
  */
-public abstract class Funcionario implements IFuncionario{
+public abstract class Funcionario extends Pessoa implements IFuncionario{
     String setor,cargo;
     float salario,comissao,salariof;
     Funcionario supervisor;
+
+    public Funcionario(String nome, String rg, String cpf, String setor, String cargo, float salario) {
+        super(nome,rg,cpf);
+        this.setor = setor;
+        this.cargo = cargo;
+        this.salario = salario;
+        this.salariof = salario;
+    }
     
     @Override
     public float calcularcomissao(float val,float porcentagem){
@@ -27,15 +35,6 @@ public abstract class Funcionario implements IFuncionario{
     
     public void trocarSupervisor(Funcionario supervisor){
         this.setSupervisor(supervisor);
-    }
-
-    public Funcionario(String setor, String cargo, float salario, float comissao, float salariof, Funcionario supervisor) {
-        this.setor = setor;
-        this.cargo = cargo;
-        this.salario = salario;
-        this.comissao = comissao;
-        this.salariof = salariof;
-        this.supervisor = supervisor;
     }
 
     public Funcionario getSupervisor() {
