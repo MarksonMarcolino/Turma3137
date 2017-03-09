@@ -5,6 +5,11 @@
  */
 package br.com.satc.grafico;
 
+import br.com.satc.pessoa.Funcionário;
+import br.com.satc.pessoa.Vendedor;
+import br.com.satc.singleton.BancoDeDados;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Edutec
@@ -188,10 +193,11 @@ public class CadastroVendedor extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(JLCargo)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(JTFCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(JBSair)
-                    .addComponent(JBCadastrar))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(JTFCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(JBCadastrar)))
                 .addContainerGap(39, Short.MAX_VALUE))
         );
 
@@ -210,7 +216,36 @@ public class CadastroVendedor extends javax.swing.JInternalFrame {
     private void JBCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCadastrarActionPerformed
         // TODO add your handling code here:
         String nome,rg,cpf,setor,cargo,especialidade;
-        float salario;
+        float salario,salariofinal = 0,comissao = 0;
+        Funcionário supervisor = null;
+        
+        if(!(JTFNome.getText().equals("")||JTFCPF.getText().equals("")||JTFRG.getText().equals("")||JTFSetor.getText().equals("")
+             ||JTFCargo.getText().equals("")||JTFSalario.getText().equals("")||JTFEspecialidade.getText().equals(""))){
+            
+             nome = JTFNome.getText(); cpf = JTFCPF.getText(); rg = JTFRG.getText(); setor = JTFSetor.getText();
+             cargo = JTFCargo.getText(); especialidade = JTFEspecialidade.getText();
+             
+             try{
+                 salario = Float.parseFloat(JTFSalario.getText());
+                 BancoDeDados.getInstance().Vendedores.add(new Vendedor(nome, rg, cpf, setor, cargo, salario, salariofinal, comissao, supervisor, especialidade));
+                 JTFNome.setText("");
+                 JTFCPF.setText("");
+                 JTFRG.setText("");
+                 JTFCargo.setText("");
+                 JTFSetor.setText("");
+                 JTFSalario.setText("");
+                 JTFEspecialidade.setText("");
+                 JTFSupervisor.setText("");
+                 JTFComissao.setText("");
+                 
+             }catch(Exception e){
+                 JOptionPane.showMessageDialog(null,"Erro: "+ e);
+             }
+             
+            
+        }else{
+            JOptionPane.showMessageDialog(null,"Todos os campos devem ser preenchidos!");
+        }
         
         
     }//GEN-LAST:event_JBCadastrarActionPerformed
@@ -228,14 +263,6 @@ public class CadastroVendedor extends javax.swing.JInternalFrame {
     private javax.swing.JLabel JLSalario;
     private javax.swing.JLabel JLSetor;
     private javax.swing.JLabel JLSupervisor;
-    private javax.swing.JTextField JTCampoRG;
-    private javax.swing.JTextField JTCampoRG1;
-    private javax.swing.JTextField JTCampoRG2;
-    private javax.swing.JTextField JTCampoRG3;
-    private javax.swing.JTextField JTCampoRG4;
-    private javax.swing.JTextField JTCampoRG5;
-    private javax.swing.JTextField JTCampoRG6;
-    private javax.swing.JTextField JTCampoRG7;
     private javax.swing.JTextField JTFCPF;
     private javax.swing.JTextField JTFCargo;
     private javax.swing.JTextField JTFComissao;

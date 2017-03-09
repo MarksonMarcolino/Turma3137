@@ -47,7 +47,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         );
         jQuadroInternoLayout.setVerticalGroup(
             jQuadroInternoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 449, Short.MAX_VALUE)
+            .addGap(0, 453, Short.MAX_VALUE)
         );
 
         jMenu1.setText("File");
@@ -61,6 +61,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenu1.add(jMenuItem1);
 
         jMenuItem2.setText("Consulta de Vendedor");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem2);
 
         jMenuBar1.add(jMenu1);
@@ -68,6 +73,11 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMenu2.setText("Edit");
 
         jMenuItem3.setText("Editar Vendedor");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItem3);
 
         jMenuBar1.add(jMenu2);
@@ -98,6 +108,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jQuadroInterno.add(novoCadastro);
         novoCadastro.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        ConsultaVendedor novoConsulta = new ConsultaVendedor();
+        jQuadroInterno.add(novoConsulta);
+        novoConsulta.setVisible(true);
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        EditarVendedor novoEditar = new EditarVendedor();
+        jQuadroInterno.add(novoEditar);
+        novoEditar.setVisible(true);
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments

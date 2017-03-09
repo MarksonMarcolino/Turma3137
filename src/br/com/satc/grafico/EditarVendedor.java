@@ -5,6 +5,11 @@
  */
 package br.com.satc.grafico;
 
+import br.com.satc.pessoa.Funcionário;
+import br.com.satc.pessoa.Vendedor;
+import br.com.satc.singleton.BancoDeDados;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Edutec
@@ -27,21 +32,261 @@ public class EditarVendedor extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        JBCadastrar = new javax.swing.JButton();
+        JBSair = new javax.swing.JButton();
+        JTFSalário = new javax.swing.JTextField();
+        JTFCargo = new javax.swing.JTextField();
+        JTFSetor = new javax.swing.JTextField();
+        JTFComissao = new javax.swing.JTextField();
+        JTFCPF = new javax.swing.JTextField();
+        JTFRG = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        JTFNome = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        JTFID = new javax.swing.JTextField();
+        JBBuscarID = new javax.swing.JButton();
+        JTFEspecialidade = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+
+        JBCadastrar.setText("Editar");
+        JBCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBCadastrarActionPerformed(evt);
+            }
+        });
+
+        JBSair.setText("Sair");
+        JBSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBSairActionPerformed(evt);
+            }
+        });
+
+        jLabel4.setText("CPF:");
+
+        jLabel5.setText("Setor:");
+
+        jLabel6.setText("Cargo:");
+
+        jLabel7.setText("Salário:");
+
+        jLabel3.setText("RG:");
+
+        jLabel2.setText("Nome:");
+
+        jLabel11.setText("ID:");
+
+        JBBuscarID.setText("Buscar");
+        JBBuscarID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JBBuscarIDActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("Especialidade:");
+
+        jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        jLabel1.setText("Editar Vendedor");
+
+        jLabel10.setText("Comissão:");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 394, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(39, 39, 39)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel1)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel2)
+                                            .addComponent(jLabel3))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(JTFNome, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                                            .addComponent(JTFRG))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jLabel11)))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(JTFID, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(JBBuscarID))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(24, 24, 24)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel8))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addComponent(JTFCPF, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                                    .addComponent(JTFEspecialidade, javax.swing.GroupLayout.Alignment.LEADING))))
+                        .addGap(0, 13, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel10))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(JTFCargo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 104, Short.MAX_VALUE)
+                            .addComponent(JTFSetor, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JTFSalário, javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(JTFComissao, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addGap(18, 18, 18)
+                        .addComponent(JBCadastrar)
+                        .addGap(18, 18, 18)
+                        .addComponent(JBSair)))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 274, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(jLabel11)
+                    .addComponent(JTFNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JTFID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JBBuscarID))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(JTFRG, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(17, 17, 17)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(JTFEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(JTFCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(JTFSetor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(16, 16, 16)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JTFCargo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(JTFSalário, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(JTFComissao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(JBCadastrar)
+                    .addComponent(JBSair))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void JBCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBCadastrarActionPerformed
+        String nome, CPF, RG, setor, cargo, especialidade;
+        Funcionário supervisor;
+        float salario, comissao;
+
+        if(!(JTFNome.getText().equals("")||JTFCPF.getText().equals("")||JTFRG.getText().equals("")||JTFSetor.getText().equals("")
+            ||JTFCargo.getText().equals("")||JTFSalário.getText().equals("")||JTFEspecialidade.getText().equals(""))){
+
+        nome = JTFNome.getText(); CPF = JTFCPF.getText(); RG = JTFRG.getText(); setor = JTFSetor.getText();
+        cargo = JTFCargo.getText(); especialidade = JTFEspecialidade.getText();
+
+        try{
+            comissao = Float.parseFloat(JTFComissao.getText());
+            salario = Float.parseFloat(JTFSalário.getText());
+            int id = Integer.parseInt(JTFID.getText());
+            Vendedor procurar = BancoDeDados.getInstance().Vendedores.get(id);           
+
+            procurar.setNome(nome);
+            procurar.setCpf(CPF);
+            procurar.setRg(RG);
+            procurar.setSetor(setor);
+            procurar.setCargo(cargo);
+            procurar.setEspecialidade(especialidade);
+            procurar.setSalario(salario);
+            procurar.setComissao(Float.parseFloat(JTFComissao.getText()));
+            procurar.setSalariofinal(salario+comissao);
+
+            JTFNome.setText("");
+            JTFCPF.setText("");
+            JTFRG.setText("");
+            JTFCargo.setText("");
+            JTFSetor.setText("");
+            JTFSalário.setText("");
+            JTFEspecialidade.setText("");
+            JTFComissao.setText("");          
+            JTFID.setText("");
+
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"Erro: "+ e);
+        }
+
+        }else{
+            JOptionPane.showMessageDialog(null,"Todos os campos devem ser preenchidos!");
+        }
+    }//GEN-LAST:event_JBCadastrarActionPerformed
+
+    private void JBSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBSairActionPerformed
+        dispose();
+    }//GEN-LAST:event_JBSairActionPerformed
+
+    private void JBBuscarIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JBBuscarIDActionPerformed
+        int id = Integer.parseInt(JTFID.getText());
+        Vendedor procurar = BancoDeDados.getInstance().Vendedores.get(id);
+        JTFNome.setText(procurar.getNome());
+        JTFCPF.setText(procurar.getCpf());
+        JTFRG.setText(procurar.getRg());
+        JTFCargo.setText(procurar.getCargo());
+        JTFSetor.setText(procurar.getSetor());
+        JTFEspecialidade.setText(procurar.getEspecialidade());
+        JTFSalário.setText(String.valueOf(procurar.getSalario()));
+        JTFComissao.setText(String.valueOf(procurar.getComissao()));
+
+    }//GEN-LAST:event_JBBuscarIDActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton JBBuscarID;
+    private javax.swing.JButton JBCadastrar;
+    private javax.swing.JButton JBSair;
+    private javax.swing.JTextField JTFCPF;
+    private javax.swing.JTextField JTFCargo;
+    private javax.swing.JTextField JTFComissao;
+    private javax.swing.JTextField JTFEspecialidade;
+    private javax.swing.JTextField JTFID;
+    private javax.swing.JTextField JTFNome;
+    private javax.swing.JTextField JTFRG;
+    private javax.swing.JTextField JTFSalário;
+    private javax.swing.JTextField JTFSetor;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     // End of variables declaration//GEN-END:variables
 }
