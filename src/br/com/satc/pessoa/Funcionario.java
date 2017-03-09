@@ -69,16 +69,16 @@ public abstract class Funcionario extends Pessoa implements IFuncionario {
         this.Supervisor = Supervisor;
     }
   @Override
- public double calcularcomissao(double valor,double porcentagem){
+ public void calcularcomissao(double valor,double porcentagem){
      this.comissao =valor*porcentagem;
      salariofinal+=salario + comissao;
-     return salariofinal;
+   
  }   
 
  @Override
  public double adicionarbonus(double bonus){
-     salariofinal+=bonus;
-     return salariofinal;
+     this.salariofinal+=bonus;
+     return this.salariofinal;
  } 
     @Override
     public void trocarsupervisor(Funcionario supervisor){

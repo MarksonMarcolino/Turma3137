@@ -10,7 +10,7 @@ package br.com.satc.pessoa;
  * @author Edutec
  */
 public interface IFuncionario {
-    public double calcularcomissao(double valor,double porcentagem);
+    public void calcularcomissao(double valor,double porcentagem);
     public double adicionarbonus(double bonus);
     public void trocarsupervisor(Funcionario supervisor);
     

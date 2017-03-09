@@ -55,8 +55,6 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
         jBSair = new javax.swing.JButton();
         jLData4 = new javax.swing.JLabel();
         jTEdi = new javax.swing.JTextField();
-        jLData5 = new javax.swing.JLabel();
-        jTSalarioFinal = new javax.swing.JTextField();
 
         jLTitulo.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
         jLTitulo.setText("Edição do Vendedor");
@@ -124,10 +122,6 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
 
         jTEdi.setEnabled(false);
 
-        jLData5.setText("Salario Final");
-
-        jTSalarioFinal.setEnabled(false);
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -158,12 +152,6 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
                     .addComponent(jLData4)
                     .addComponent(jTEdi, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(72, 72, 72))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLData5)
-                    .addComponent(jTSalarioFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 118, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40))
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(72, 72, 72)
@@ -198,15 +186,11 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
                 .addComponent(jTRg, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLData4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 10, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblNome)
                     .addComponent(jTEdi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(jLData5)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTSalarioFinal, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(3, 3, 3)
+                .addGap(61, 61, 61)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jBProcurar)
                     .addComponent(jBEditar))
@@ -244,6 +228,8 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBProcurarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBProcurarActionPerformed
+      
+
         try{
             int id = Integer.parseInt(jTID.getText());
             jTNome.setText(BancoVendedor.getInstance().vendedores.get(id).getNome());
@@ -254,7 +240,7 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
             jTCpf.setText(BancoVendedor.getInstance().vendedores.get(id).getCpf());
             jTSalario.setText(String.valueOf(BancoVendedor.getInstance().vendedores.get(id).getSalario()));
             jTSetor.setText(BancoVendedor.getInstance().vendedores.get(id).getSetor());
-              jTSalarioFinal.setText(String.valueOf(BancoVendedor.getInstance().vendedores.get(id).adicionarbonus(Double.parseDouble(jTEdi.getText()))));
+            jTEdi.setText(Double.toString(BancoVendedor.getInstance().vendedores.get(Integer.parseInt(jTID.getText())).getBonus()));
             
             jBCancelar.setEnabled(true);
             jBProcurar.setEnabled(false);
@@ -268,7 +254,7 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
             jTSalario.setEnabled(true);
             jTSetor.setEnabled(true);
             jTEdi.setEnabled(true);
-            jTSalarioFinal.setEnabled(true);
+           
           
             
             
@@ -280,11 +266,11 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
 
     private void jBEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBEditarActionPerformed
        String nome,cpf,rg,especialidade,cargo,setor;
-        double salario;
+        double salario,bonus;
 
         if (!(jTCpf.getText().equals("") || jTNome.getText().equals("")
             || jTEspecialidade.getText().equals("") || jTCargo.getText().equals("") || jTCpf.getText().equals(""))){
-
+           
         cargo = jTCargo.getText();
         nome = jTNome.getText();
         cpf = jTCpf.getText();
@@ -293,9 +279,9 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
         rg = jTRg.getText();
         salario = Integer.parseInt(jTSalario.getText());
         especialidade = jTEspecialidade.getText();
-
+        bonus = Double.parseDouble(jTEdi.getText());
        
-
+           BancoVendedor.getInstance().vendedores.get(Integer.parseInt(jTID.getText())).setBonus(bonus);
       BancoVendedor.getInstance().vendedores.set(Integer.parseInt(jTID.getText()), new Vendedor(especialidade,setor, cargo, salario, nome,  rg, cpf));
         JOptionPane.showMessageDialog(this, "Modificado com Sucesso");
        jBCancelar.setEnabled(false);
@@ -348,7 +334,6 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLData2;
     private javax.swing.JLabel jLData3;
     private javax.swing.JLabel jLData4;
-    private javax.swing.JLabel jLData5;
     private javax.swing.JLabel jLEspecie;
     private javax.swing.JLabel jLRaca;
     private javax.swing.JLabel jLTitulo;
@@ -361,7 +346,6 @@ public class EdicaoVendedor extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTNome;
     private javax.swing.JTextField jTRg;
     private javax.swing.JTextField jTSalario;
-    private javax.swing.JTextField jTSalarioFinal;
     private javax.swing.JTextField jTSetor;
     private javax.swing.JLabel lblNome;
     // End of variables declaration//GEN-END:variables

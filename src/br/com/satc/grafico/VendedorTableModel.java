@@ -19,7 +19,7 @@ public VendedorTableModel(List<Vendedor> vendedores){
 
     @Override
     public int getColumnCount() {
-        return 7;
+        return 9;
     }
 
     @Override
@@ -40,6 +40,10 @@ public VendedorTableModel(List<Vendedor> vendedores){
             return v.getCargo();
             case 6:
             return v.getEspecialidade();
+            case 7:
+            return v.getBonus();
+            case 8: 
+                return v.getSalario()+v.getBonus();
         }
 return null;
     }
@@ -60,6 +64,11 @@ return null;
                 return "Cargo";
             case 6:
                 return "Especialidade";
+                case 7:
+                return"bonus";
+              
+            case 8:
+                return"Salario Final";
           
         }
         return "";

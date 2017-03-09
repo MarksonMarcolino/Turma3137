@@ -11,6 +11,7 @@ package br.com.satc.pessoa;
  */
 public class Vendedor extends Funcionario {
 String especialidade;
+double bonus;
 
     public Vendedor(String especialidade, String setor, String cargo, double salario, String nome, String rg, String cpf) {
         super(setor, cargo, salario, nome, rg, cpf);
@@ -23,6 +24,14 @@ String especialidade;
 
     public void setEspecialidade(String especialidade) {
         this.especialidade = especialidade;
+    }
+
+    public double getBonus() {
+        return bonus;
+    }
+
+    public void setBonus(double bonus) {
+        this.bonus = bonus;
     }
 
 
