@@ -5,6 +5,7 @@
  */
 package br.com.satc.InterfaceGrafica;
 
+import br.com.satc.Edicao.EdicaoVendedor;
 import br.com.satc.InterfaceConsultas.ConsultaVendedor;
 import br.com.satc.InterfaceGrafica.Cadastros.CadastroVendedor;
 
@@ -36,6 +37,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMIFuncionario = new javax.swing.JMenuItem();
         jMConsulta = new javax.swing.JMenu();
         jMIConsultaFuncionario = new javax.swing.JMenuItem();
+        jMEditar = new javax.swing.JMenu();
+        jMEditarVendedor = new javax.swing.JMenuItem();
         jMSair = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -46,7 +49,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jInternalFrame.getContentPane().setLayout(jInternalFrameLayout);
         jInternalFrameLayout.setHorizontalGroup(
             jInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 597, Short.MAX_VALUE)
+            .addGap(0, 880, Short.MAX_VALUE)
         );
         jInternalFrameLayout.setVerticalGroup(
             jInternalFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -55,7 +58,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMCadastro.setText("Cadastro");
 
-        jMIFuncionario.setText("Funcionario");
+        jMIFuncionario.setText("Vendedores");
         jMIFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMIFuncionarioActionPerformed(evt);
@@ -67,7 +70,7 @@ public class MenuPrincipal extends javax.swing.JFrame {
 
         jMConsulta.setText("Consulta");
 
-        jMIConsultaFuncionario.setText("Funcionario");
+        jMIConsultaFuncionario.setText("Vendedores");
         jMIConsultaFuncionario.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMIConsultaFuncionarioActionPerformed(evt);
@@ -76,6 +79,18 @@ public class MenuPrincipal extends javax.swing.JFrame {
         jMConsulta.add(jMIConsultaFuncionario);
 
         jMenuPrincipal.add(jMConsulta);
+
+        jMEditar.setText("Editar");
+
+        jMEditarVendedor.setText("Vendedor");
+        jMEditarVendedor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMEditarVendedorActionPerformed(evt);
+            }
+        });
+        jMEditar.add(jMEditarVendedor);
+
+        jMenuPrincipal.add(jMEditar);
 
         jMSair.setText("Sair");
         jMSair.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -126,6 +141,12 @@ public class MenuPrincipal extends javax.swing.JFrame {
         novoCadastro.setVisible(true);
     }//GEN-LAST:event_jMIFuncionarioActionPerformed
 
+    private void jMEditarVendedorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMEditarVendedorActionPerformed
+        EdicaoVendedor novoCadastro = new EdicaoVendedor();
+        jInternalFrame.add(novoCadastro);
+        novoCadastro.setVisible(true);
+    }//GEN-LAST:event_jMEditarVendedorActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -165,6 +186,8 @@ public class MenuPrincipal extends javax.swing.JFrame {
     private javax.swing.JInternalFrame jInternalFrame;
     private javax.swing.JMenu jMCadastro;
     private javax.swing.JMenu jMConsulta;
+    private javax.swing.JMenu jMEditar;
+    private javax.swing.JMenuItem jMEditarVendedor;
     private javax.swing.JMenuItem jMIConsultaFuncionario;
     private javax.swing.JMenuItem jMIFuncionario;
     private javax.swing.JMenu jMSair;
