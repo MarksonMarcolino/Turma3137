@@ -5,6 +5,11 @@
  */
 package br.com.satc.grafico;
 
+import br.com.satc.pessoa.Funcionario;
+import br.com.satc.pessoa.Vendedor;
+import br.com.satc.singleton.BancoVendedor;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Edutec
@@ -41,11 +46,14 @@ public class EditV extends javax.swing.JInternalFrame {
         jLblSalario = new javax.swing.JLabel();
         jTxtRG = new javax.swing.JTextField();
         jLblRG = new javax.swing.JLabel();
-        jTxtSupervisor = new javax.swing.JTextField();
-        jLblSupervisor = new javax.swing.JLabel();
         jLblComissao = new javax.swing.JLabel();
         jTxtEspecialidade = new javax.swing.JTextField();
         jTxtComissao = new javax.swing.JTextField();
+        jBtnPesquisar = new javax.swing.JButton();
+        jBtnSalvar = new javax.swing.JButton();
+        jBtnFechar = new javax.swing.JButton();
+        jLblID = new javax.swing.JLabel();
+        jTxtID = new javax.swing.JTextField();
 
         jLblEdtVendedor.setFont(new java.awt.Font("Calibri", 0, 24)); // NOI18N
         jLblEdtVendedor.setText("Edit Vendedor");
@@ -68,39 +76,67 @@ public class EditV extends javax.swing.JInternalFrame {
         jLblRG.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
         jLblRG.setText("RG:");
 
-        jLblSupervisor.setText("Supervisor:");
-
         jLblComissao.setText("Comissão:");
+
+        jBtnPesquisar.setText("Pesquisar");
+        jBtnPesquisar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnPesquisarActionPerformed(evt);
+            }
+        });
+
+        jBtnSalvar.setText("Salvar");
+        jBtnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnSalvarActionPerformed(evt);
+            }
+        });
+
+        jBtnFechar.setText("Fechar");
+
+        jLblID.setFont(new java.awt.Font("Calibri", 0, 14)); // NOI18N
+        jLblID.setText("ID:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(171, 171, 171)
-                .addComponent(jLblEdtVendedor)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLblSupervisor)
-                            .addComponent(jTxtSupervisor, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(171, 171, 171)
+                                .addComponent(jLblEdtVendedor))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(94, 94, 94)
+                                .addComponent(jBtnPesquisar)
+                                .addGap(54, 54, 54)
+                                .addComponent(jBtnSalvar)
+                                .addGap(50, 50, 50)
+                                .addComponent(jBtnFechar)))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(38, 38, 38)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLblRG)
-                                .addComponent(jTxtRG)
-                                .addComponent(jLblCargo)
-                                .addComponent(jTxtCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLblNome)
-                                .addComponent(jTxtNome)
-                                .addComponent(jLblCPF)
-                                .addComponent(jTxtCPF, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 97, Short.MAX_VALUE)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLblRG)
+                                    .addComponent(jTxtRG)
+                                    .addComponent(jLblCargo)
+                                    .addComponent(jTxtCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLblNome)
+                                    .addComponent(jTxtNome)
+                                    .addComponent(jLblCPF)
+                                    .addComponent(jTxtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(43, 43, 43)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(jLblID)
+                                    .addComponent(jTxtID, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(82, 82, 82)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jLblSetor)
@@ -110,17 +146,17 @@ public class EditV extends javax.swing.JInternalFrame {
                             .addComponent(jLblSalario)
                             .addComponent(jTxtSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLblEspecialidade)
-                            .addComponent(jTxtEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(62, 62, 62))))
+                            .addComponent(jTxtEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLblEdtVendedor)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(33, 33, 33)
                         .addComponent(jLblNome)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTxtNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -129,7 +165,13 @@ public class EditV extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTxtCPF, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLblSetor)
+                        .addGap(7, 7, 7)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLblSetor)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLblID)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jTxtID, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTxtSetor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -155,35 +197,99 @@ public class EditV extends javax.swing.JInternalFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTxtEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLblSupervisor)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTxtSupervisor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(116, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBtnPesquisar)
+                    .addComponent(jBtnSalvar)
+                    .addComponent(jBtnFechar))
+                .addContainerGap(110, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jBtnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSalvarActionPerformed
+       String nome, CPF, RG, setor, cargo, especialidade;
+        Funcionario supervisor;
+        float salario, comissao;
+
+        if(!(jTxtNome.getText().equals("")||jTxtCPF.getText().equals("")||jTxtRG.getText().equals("")||jTxtSetor.getText().equals("")
+            ||jTxtCargo.getText().equals("")||jTxtSalario.getText().equals("")||jTxtEspecialidade.getText().equals(""))){
+
+        nome = jTxtNome.getText(); CPF = jTxtCPF.getText(); RG = jTxtRG.getText(); setor = jTxtSetor.getText();
+        cargo = jTxtCargo.getText(); especialidade = jTxtEspecialidade.getText();
+
+        try{
+            comissao = Float.parseFloat(jTxtComissao.getText());
+            salario = Float.parseFloat(jTxtSalario.getText());
+            int id = Integer.parseInt(jTxtID.getText());
+            Vendedor procurar = BancoVendedor.getInstance().vendedores.get(id);           
+
+            procurar.setNome(nome);
+            procurar.setCpf(CPF);
+            procurar.setRg(RG);
+            procurar.setSetor(setor);
+            procurar.setCargo(cargo);
+            procurar.setEspecialidade(especialidade);
+            procurar.setSalario(salario);
+            procurar.setComissao(Float.parseFloat(jTxtComissao.getText()));
+            procurar.setSalariofinal(salario+comissao);
+
+            jTxtNome.setText("");
+            jTxtCPF.setText("");
+            jTxtRG.setText("");
+            jTxtCargo.setText("");
+            jTxtSetor.setText("");
+            jTxtSalario.setText("");
+            jTxtEspecialidade.setText("");
+            jTxtComissao.setText("");          
+            jTxtID.setText("");
+
+        }catch(Exception e){
+            JOptionPane.showMessageDialog(null,"Erro: "+ e);
+        }
+
+        }else{
+            JOptionPane.showMessageDialog(null,"Todos os campos devem ser preenchidos!");
+        }
+    
+    }//GEN-LAST:event_jBtnSalvarActionPerformed
+
+    private void jBtnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnPesquisarActionPerformed
+        int id = Integer.parseInt(jTxtID.getText());
+        Vendedor procurar = BancoVendedor.getInstance().vendedores.get(id);
+        jTxtNome.setText(procurar.getNome());
+        jTxtCPF.setText(procurar.getCpf());
+        jTxtRG.setText(procurar.getRg());
+        jTxtCargo.setText(procurar.getCargo());
+        jTxtSetor.setText(procurar.getSetor());
+        jTxtEspecialidade.setText(procurar.getEspecialidade());
+        jTxtSalario.setText(String.valueOf(procurar.getSalario()));
+        jTxtComissao.setText(String.valueOf(procurar.getComissao()));
+    }//GEN-LAST:event_jBtnPesquisarActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnFechar;
+    private javax.swing.JButton jBtnPesquisar;
+    private javax.swing.JButton jBtnSalvar;
     private javax.swing.JLabel jLblCPF;
     private javax.swing.JLabel jLblCargo;
     private javax.swing.JLabel jLblComissao;
     private javax.swing.JLabel jLblEdtVendedor;
     private javax.swing.JLabel jLblEspecialidade;
+    private javax.swing.JLabel jLblID;
     private javax.swing.JLabel jLblNome;
     private javax.swing.JLabel jLblRG;
     private javax.swing.JLabel jLblSalario;
     private javax.swing.JLabel jLblSetor;
-    private javax.swing.JLabel jLblSupervisor;
     private javax.swing.JTextField jTxtCPF;
     private javax.swing.JTextField jTxtCargo;
     private javax.swing.JTextField jTxtComissao;
     private javax.swing.JTextField jTxtEspecialidade;
+    private javax.swing.JTextField jTxtID;
     private javax.swing.JTextField jTxtNome;
     private javax.swing.JTextField jTxtRG;
     private javax.swing.JTextField jTxtSalario;
     private javax.swing.JTextField jTxtSetor;
-    private javax.swing.JTextField jTxtSupervisor;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,6 +5,11 @@
  */
 package br.com.satc.grafico;
 
+import br.com.satc.pessoa.Funcionario;
+import br.com.satc.pessoa.Vendedor;
+import br.com.satc.singleton.BancoVendedor;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Edutec
@@ -44,8 +49,8 @@ public class CadastroV extends javax.swing.JInternalFrame {
         jLblSalario = new javax.swing.JLabel();
         jLblEspecialidade = new javax.swing.JLabel();
         jTxtEspecialidade = new javax.swing.JTextField();
-        jLblSupervisor = new javax.swing.JLabel();
-        jTxtSupervisor = new javax.swing.JTextField();
+        jBtnCadastrar = new javax.swing.JButton();
+        jBtnSair = new javax.swing.JButton();
 
         setFont(new java.awt.Font("Calibri", 0, 18)); // NOI18N
 
@@ -72,48 +77,60 @@ public class CadastroV extends javax.swing.JInternalFrame {
 
         jLblEspecialidade.setText("Especialidade:");
 
-        jLblSupervisor.setText("Supervisor:");
+        jBtnCadastrar.setText("Cadastrar");
+        jBtnCadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnCadastrarActionPerformed(evt);
+            }
+        });
+
+        jBtnSair.setText("Sair");
+        jBtnSair.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBtnSairActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(171, 171, 171)
-                .addComponent(jLblCadastroVendedor)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLblRG)
+                        .addComponent(jTxtRG)
+                        .addComponent(jLblCargo)
+                        .addComponent(jTxtCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLblNome)
+                        .addComponent(jTxtNome)
+                        .addComponent(jLblCPF)
+                        .addComponent(jTxtCPF, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLblSetor)
+                        .addComponent(jTxtSetor)
+                        .addComponent(jLblComissao)
+                        .addComponent(jTxtComissao, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLblSalario)
+                    .addComponent(jTxtSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLblEspecialidade)
+                    .addComponent(jTxtEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(62, 62, 62))
+            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLblSupervisor)
-                            .addComponent(jTxtSupervisor, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(171, 171, 171)
+                        .addComponent(jLblCadastroVendedor))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLblRG)
-                                .addComponent(jTxtRG)
-                                .addComponent(jLblCargo)
-                                .addComponent(jTxtCargo, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLblNome)
-                                .addComponent(jTxtNome)
-                                .addComponent(jLblCPF)
-                                .addComponent(jTxtCPF, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 91, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLblSetor)
-                                .addComponent(jTxtSetor)
-                                .addComponent(jLblComissao)
-                                .addComponent(jTxtComissao, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jLblSalario)
-                            .addComponent(jTxtSalario, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLblEspecialidade)
-                            .addComponent(jTxtEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(62, 62, 62))))
+                        .addGap(144, 144, 144)
+                        .addComponent(jBtnCadastrar)
+                        .addGap(18, 18, 18)
+                        .addComponent(jBtnSair, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -156,18 +173,59 @@ public class CadastroV extends javax.swing.JInternalFrame {
                         .addComponent(jLblEspecialidade)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jTxtEspecialidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLblSupervisor)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTxtSupervisor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(129, Short.MAX_VALUE))
+                .addGap(69, 69, 69)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jBtnCadastrar)
+                    .addComponent(jBtnSair))
+                .addContainerGap(32, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jBtnCadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnCadastrarActionPerformed
+        String nome,cargo = null,especialidade = null,setor = null,rg,cpf;
+        Funcionario supervisor = null;
+        float comissao,salario;
+        
+        if (!(jTxtNome.getText().equals("") || jTxtCPF.getText().equals("") || jTxtRG.getText().equals("") || jTxtCargo.getText().equals("") || jTxtEspecialidade.getText().equals("") || jTxtSetor.getText().equals("") || jTxtComissao.getText().equals("") || jTxtSalario.getText().equals(""))) {
+
+            nome = jTxtNome.getText();
+            cpf = jTxtCPF.getText();
+            rg = jTxtRG.getText();
+            
+            try {
+                comissao = Float.parseFloat(jTxtComissao.getText());
+                salario = Float.parseFloat(jTxtSalario.getText());
+                BancoVendedor.getInstance().vendedores.add(new Vendedor(nome, cargo, setor, rg, cpf, comissao, salario, especialidade, supervisor));
+                JOptionPane.showMessageDialog(this, "Cadastro feito.");
+                jTxtNome.setText("");
+                jTxtCPF.setText("");
+                jTxtRG.setText("");
+                jTxtComissao.setText("");
+                jTxtSalario.setText("");
+                jTxtCargo.setText("");
+                jTxtEspecialidade.setText("");
+                jTxtSetor.setText("");
+                
+                
+            } catch (NumberFormatException erro) {
+                JOptionPane.showMessageDialog(this, "Não deixe o(s) campos em branco.");
+            }
+        }
+            
+        
+        
+    }//GEN-LAST:event_jBtnCadastrarActionPerformed
+
+    private void jBtnSairActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBtnSairActionPerformed
+        dispose();
+    }//GEN-LAST:event_jBtnSairActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnCadastrar;
+    private javax.swing.JButton jBtnSair;
     private javax.swing.JLabel jLblCPF;
     private javax.swing.JLabel jLblCadastroVendedor;
     private javax.swing.JLabel jLblCargo;
@@ -177,7 +235,6 @@ public class CadastroV extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLblRG;
     private javax.swing.JLabel jLblSalario;
     private javax.swing.JLabel jLblSetor;
-    private javax.swing.JLabel jLblSupervisor;
     private javax.swing.JTextField jTxtCPF;
     private javax.swing.JTextField jTxtCargo;
     private javax.swing.JTextField jTxtComissao;
@@ -186,6 +243,5 @@ public class CadastroV extends javax.swing.JInternalFrame {
     private javax.swing.JTextField jTxtRG;
     private javax.swing.JTextField jTxtSalario;
     private javax.swing.JTextField jTxtSetor;
-    private javax.swing.JTextField jTxtSupervisor;
     // End of variables declaration//GEN-END:variables
 }

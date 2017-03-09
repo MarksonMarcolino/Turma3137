@@ -10,7 +10,8 @@ package br.com.satc.pessoa;
  * @author Markson
  */
 public abstract class Pessoa implements IPessoa {
-    private String nome, rg, cpf;
+     String nome, rg, cpf;
+     
     
     Pessoa(String nome, String rg, String cpf){
         this.setNome(nome);
